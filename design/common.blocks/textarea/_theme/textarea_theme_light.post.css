@@ -1,0 +1,3 @@
+block(textarea).mod(theme light) {
+  --textarea-color: var(--theme-color-light, #000);
+}
