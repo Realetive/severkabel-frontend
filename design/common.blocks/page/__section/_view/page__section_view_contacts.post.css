@@ -26,7 +26,7 @@ block(page).elem(section).mod(view contacts) {
 
   @media (min-width: 1024px) {
     elem(aside) {
-      max-width: 520px;
+      max-width: 560px;
       margin-left: auto;
       margin-right: 0;
     }
