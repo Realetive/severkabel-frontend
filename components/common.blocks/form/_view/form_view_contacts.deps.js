@@ -2,6 +2,19 @@
   {
     shouldDeps: [
       {
+        mods: {
+          'has-validation': true,
+          message: 'popup',
+        },
+      },
+      {
+        elems: [
+          'header',
+          'content',
+          'footer',
+        ],
+      },
+      {
         block: 'heading',
         mods: {
           size: [ 'l', 'xxl' ],
@@ -30,10 +43,12 @@
       {
         block: 'button',
         mods: {
-          width: 'available',
           type: 'submit',
           view: 'action',
         },
+      },
+      {
+        block: 'paragraph',
       },
     ],
   },

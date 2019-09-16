@@ -22,6 +22,8 @@ block( 'page' )
               block: 'form',
               mods: { view: 'contacts' },
               mix: { block, elem: 'form' },
+              heading: 'Контакты',
+              subheading: 'Напишите нам',
             },
             {
               elem: 'contacts',

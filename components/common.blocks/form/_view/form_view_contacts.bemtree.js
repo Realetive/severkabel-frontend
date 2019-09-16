@@ -4,19 +4,20 @@ block( 'form' ).mod( 'view', 'contacts' )( {
     'ctx.method': 'POST',
   },
   addMods: {
+    'has-validation': true,
     message: 'popup',
   },
-  content: node => [
+  content: ( node, { heading, subheading, description } ) => [
     {
       elem: 'header',
       content: [
-        {
+        heading && {
           block: 'heading',
           mods: { size: 'xxl' },
           mix: { block: node.block, elem: 'heading', elemMods: { size: 'l' } },
-          content: 'Контакты',
+          content: heading,
         },
-        {
+        subheading && {
           block: 'heading',
           mods: { size: 'l' },
           mix: {
@@ -24,7 +25,11 @@ block( 'form' ).mod( 'view', 'contacts' )( {
             elem: 'heading',
             elemMods: { size: 'xxl' },
           },
-          content: 'Напишите нам',
+          content: subheading,
+        },
+        description && {
+          block: 'paragraph',
+          content: description,
         },
       ],
     },
@@ -40,6 +45,7 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
+            js: { required: { message: 'Это поле обязательно' } },
             directions: [ 'bottom-left' ],
             name: 'name',
             content: [
@@ -66,6 +72,7 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
+            js: { required: { message: 'Это поле обязательно' } },
             directions: [ 'bottom-left' ],
             name: 'phone',
             content: [
@@ -93,6 +100,7 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
+            js: { required: { message: 'Это поле обязательно' } },
             directions: [ 'bottom-left' ],
             name: 'email',
             content: [
@@ -119,6 +127,7 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
+            js: { required: { message: 'Это поле обязательно' } },
             directions: [ 'bottom-left' ],
             name: 'message',
             content: [
@@ -146,8 +155,9 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
+            js: { required: { message: 'Это поле обязательно' } },
             directions: [ 'bottom-left' ],
-            name: 'input',
+            name: 'agreement',
             content: [
               {
                 elem: 'control',
@@ -166,7 +176,6 @@ block( 'form' ).mod( 'view', 'contacts' )( {
       content: {
         block: 'button',
         mods: {
-          width: 'available',
           type: 'submit',
           view: 'action',
         },
