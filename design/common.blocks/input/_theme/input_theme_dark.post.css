@@ -1,3 +1,3 @@
 block(input).mod(theme dark) {
-  
+  --input-color: var(--theme-color-dark, #fff);
 }

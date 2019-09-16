@@ -8,8 +8,17 @@
         block: 'form',
         mods: {
           view: 'feedback',
+          'has-validation': true,
           message: 'popup',
         },
+      },
+      {
+        block: 'form',
+        elems: [
+          'header',
+          'content',
+          'footer',
+        ],
       },
       {
         block: 'heading',

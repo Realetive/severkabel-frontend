@@ -1,0 +1,3 @@
+block(checkbox).mod(theme dark) {
+  --checkbox-color: var(--theme-color-dark, #fff);
+}

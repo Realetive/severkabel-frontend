@@ -10,6 +10,7 @@ block( 'page' )
       block: 'form',
       mods: {
         view: 'feedback',
+        'has-validation': true,
         message: 'popup',
       },
       mix: { block: node.block, elem: 'form' },
@@ -43,6 +44,7 @@ block( 'page' )
                   required: true,
                   message: 'popup',
                 },
+                js: { required: { message: 'Это поле обязательно' } },
                 directions: [ 'bottom-left' ],
                 name: 'name',
                 content: [
@@ -69,6 +71,7 @@ block( 'page' )
                   required: true,
                   message: 'popup',
                 },
+                js: { required: { message: 'Это поле обязательно' } },
                 directions: [ 'bottom-left' ],
                 name: 'phone',
                 content: [
@@ -96,6 +99,7 @@ block( 'page' )
                   required: true,
                   message: 'popup',
                 },
+                js: { required: { message: 'Это поле обязательно' } },
                 directions: [ 'bottom-left' ],
                 name: 'email',
                 content: [
@@ -122,6 +126,7 @@ block( 'page' )
                   required: true,
                   message: 'popup',
                 },
+                js: { required: { message: 'Это поле обязательно' } },
                 directions: [ 'bottom-left' ],
                 name: 'message',
                 content: [
@@ -149,8 +154,9 @@ block( 'page' )
                   required: true,
                   message: 'popup',
                 },
+                js: { required: { message: 'Это поле обязательно' } },
                 directions: [ 'bottom-left' ],
-                name: 'input',
+                name: 'agreement',
                 content: [
                   {
                     elem: 'control',
@@ -169,7 +175,6 @@ block( 'page' )
           content: {
             block: 'button',
             mods: {
-              width: 'available',
               type: 'submit',
               view: 'action',
             },

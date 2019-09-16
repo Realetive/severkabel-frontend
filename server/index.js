@@ -40,37 +40,49 @@ app
  *****************************************************************************/
 
 app.post( '*', ( { body }, res ) => {
-  nodemailer.createTestAccount( () => {
-    const transporter = nodemailer.createTransport( {
-      host: 'smtp.googlemail.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: 'realetive@gmail.com',
-        pass: 'Oksana-travel-ruler-nevatrip',
-      },
+  const {
+    name,
+    phone,
+    email,
+    message,
+    agreement,
+  } = body;
+
+  if ( name && phone && email && message && agreement ) {
+    nodemailer.createTestAccount( () => {
+      const transporter = nodemailer.createTransport( {
+        host: 'smtp.googlemail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'realetive@gmail.com',
+          pass: 'Oksana-travel-ruler-nevatrip',
+        },
+      } );
+
+      const mailOptions = {
+        from: '"SeverKabel" <realetive@gmail.com>',
+        to: [ 'severkabel@romanganin.ru' ],
+        subject: `${ name } / ${ phone }`,
+        replyTo: email,
+        text: `${ name } / ${ phone } : ${ message }`,
+        html: `
+          <p><b>Имя:</b> ${ name }</p>
+          <p><b>Телефон:</b> ${ phone }</p>
+          <p><b>Почта:</b> ${ email }</p>
+          <p><b>Сообщение:</b> ${ message }</p>
+        `,
+      };
+
+      transporter.sendMail( mailOptions, error => {
+        if ( error ) return console.log( error );
+      } );
+
+      return res.redirect( 302, '/thanks' );
     } );
-
-    const mailOptions = {
-      from: '"SeverKabel" <realetive@gmail.com>',
-      to: [ 'tatiana@severkabel.ru', 'severkabel@romanganin.ru' ],
-      subject: `${ body.name } / ${ body.phone }`,
-      replyTo: body.email,
-      text: `${ body.name } / ${ body.phone } : ${ body.message }`,
-      html: `
-        <p><b>Имя:</b> ${ body.name }</p>
-        <p><b>Телефон:</b> ${ body.phone }</p>
-        <p><b>Почта:</b> ${ body.email }</p>
-        <p><b>Сообщение:</b> ${ body.message }</p>
-      `,
-    };
-
-    transporter.sendMail( mailOptions, error => {
-      if ( error ) return console.log( error );
-    } );
-
-    return res.redirect( 302, '/thanks' );
-  } );
+  } else {
+    return res.redirect( 302, '/' );
+  }
 } );
 
 app.all( '*', async ( req, res, next ) => {

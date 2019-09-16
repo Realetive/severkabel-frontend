@@ -1,0 +1,3 @@
+block(textarea).mod(theme dark) {
+  --textarea-color: var(--theme-color-dark, #fff);
+}

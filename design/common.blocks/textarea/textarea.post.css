@@ -1,5 +1,26 @@
 block(textarea) {
   background-color: transparent;
   border: none;
-  resize: vertical;
+  resize: none;
+  color: var(--textarea-color);
+
+  line-height: 1.5;
+
+  background-attachment: local;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent calc(1.5em - 1px),
+    #ccc calc(1.5em - 1px),
+    #ccc 1.5em,
+    transparent 1.5em
+  );
+
+  @each $size,
+    $fontSize in
+    (   xs,     s,     m,     l,    xl,   xxl),
+    ( 12px,  14px,  16px,  18px,  20px,  24px) {
+    mod(size $size) {
+      font-size: $fontSize;
+    }
+  }
 }

@@ -6,8 +6,8 @@ module.exports = function() {
   return [
     '[ {',
     '  shouldDeps: [',
-    '    { mods: { theme: \'*\' } }',
-    '  ]',
+    '    { mods: { theme: \'*\' } },',
+    '  ],',
     '} ]',
     ''
   ].join(EOL);

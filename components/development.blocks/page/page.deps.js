@@ -1,6 +1,6 @@
 ( {
   shouldDeps: [
-    'livereload',
+    // 'livereload',
 
     // 'debug',
   ],
