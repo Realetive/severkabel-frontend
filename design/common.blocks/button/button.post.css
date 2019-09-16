@@ -13,6 +13,8 @@ block(button) {
   white-space: nowrap;
   transition: background-color 200ms;
 
+  box-shadow: inset 0 0 0 1px currentColor;
+
   background: inherit;
   color: var(--button-color, inherit);
 
@@ -39,7 +41,7 @@ block(button) {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
-    vertical-align: bottom;
+    vertical-align: baseline;
     color: inherit;
     min-width: 1em;
     min-height: 1em;
