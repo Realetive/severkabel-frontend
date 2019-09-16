@@ -13,12 +13,12 @@ modules.define( 'form-field', [ 'i-bem-dom' ],
           true () {
             this.__base.apply( this, arguments );
 
-            // this.hasMod( 'invalid' ) && this.getMessage().show();
+            this.hasMod( 'invalid' ) && this.getMessage().show();
           },
           '' () {
             this.__base.apply( this, arguments );
 
-            // this.getMessage() && this.getMessage().hide();
+            this.getMessage() && this.getMessage().hide();
           },
         },
       },

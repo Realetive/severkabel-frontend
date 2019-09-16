@@ -1,20 +1,7 @@
 block(form-field) {
-  position: relative;
   padding-top: 2em;
 
   elem(label) {
-    position: absolute;
-    top: 2em;
     color: #c4c4c4;
-    padding: .4em;
-    box-sizing: border-box;
-    transition: all 500ms;
-  }
-
-  mod(focused) {
-    elem(label) {
-      top: 0;
-      padding-left: 0;
-    }
   }
 }
