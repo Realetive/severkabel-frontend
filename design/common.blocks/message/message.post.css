@@ -1,0 +1,5 @@
+block(message) {
+  elem(control) {
+    color: var(--message-color);
+  }
+}

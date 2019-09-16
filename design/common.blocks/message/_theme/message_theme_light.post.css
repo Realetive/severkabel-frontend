@@ -1,0 +1,5 @@
+block(popup).mod(theme light) {
+  &block(message).elem(control) {
+    --message-color: var(--theme-color-light, #000);
+  }
+}
