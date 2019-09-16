@@ -1,7 +1,7 @@
 block(input) {
   position: relative;
   display: flex;
-  color: inherit;
+  color: var(--input-color);
   padding: .4em;
   box-sizing: border-box;
   border-bottom: 1px solid #c4c4c4;
@@ -27,6 +27,7 @@ block(input) {
     padding: 0;
     outline: none;
     background: 0 0;
+    color: inherit;
     font-size: inherit;
     line-height: inherit;
 
@@ -138,27 +139,6 @@ block(input) {
       cursor: default
     }
   }
-
-  mod(invalid) {
-    background-color: red;
-
-    &:before {
-      background-color: #ff9f8e;
-    }
-  }
-
-  mod(width available) {
-    width: 100%
-  }
-
-  mod(type password) elem(control) {
-    text-overflow: clip
-  }
-
-  mod(type search) elem(control)::placeholder {
-    font-family: unset;
-  }
-
 }
 
 block(control-group) {

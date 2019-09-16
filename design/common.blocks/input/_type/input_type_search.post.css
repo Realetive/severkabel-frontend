@@ -1,0 +1,5 @@
+block(input).mod(type search) {
+  elem(control)::placeholder {
+    font-family: unset;
+  }
+}
