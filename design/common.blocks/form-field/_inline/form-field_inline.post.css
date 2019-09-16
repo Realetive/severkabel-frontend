@@ -1,0 +1,13 @@
+block(form-field).mod(inline) {
+  elem(label),
+  elem(control) {
+    display: inline-block
+  }
+
+  elem(label) + elem(control),
+  elem(control) + elem(label),
+  elem(control) + elem(control),
+  elem(label) + elem(label) {
+    margin-left: 5px;
+  }
+}

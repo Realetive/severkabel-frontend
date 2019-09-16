@@ -1,0 +1,5 @@
+block(textarea) {
+  background-color: transparent;
+  border: none;
+  resize: vertical;
+}

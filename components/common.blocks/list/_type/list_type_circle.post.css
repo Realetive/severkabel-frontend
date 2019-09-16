@@ -1,0 +1,5 @@
+block(list).mod(type circle) {
+  list-style-type: circle;
+  list-style-position: outside;
+  padding-left: 1.1em;
+}

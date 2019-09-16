@@ -1,0 +1,26 @@
+block(heading) {
+  margin: 0;
+  line-height: 1.2;
+  width: 100%;
+  color: var(--heading-color, inherit);
+  background-color: transparent;
+  font-weight: 600;
+
+  @each $size, $fontSize, $fontSize1024, $fontSize1440 in
+    (  xs,        s,      m,    l,      xl,    xxl),
+    (1rem, 1.125rem, 1.5rem, 2rem,  1.5rem, 1.7rem),
+    (1rem, 1.125rem, 1.5rem, 2rem, 2.25rem, 2.5rem),
+    (1rem, 1.125rem, 1.5rem, 2rem,    3rem, 3.2rem) {
+    .mod(size $size) {
+      font-size: $fontSize;
+
+      @media (min-width: 1024px) {
+        font-size: $fontSize1024;
+      }
+
+      @media (min-width: 1440px) {
+        font-size: $fontSize1440;
+      }
+    }
+  }
+}

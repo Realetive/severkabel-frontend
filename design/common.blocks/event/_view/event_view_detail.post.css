@@ -1,0 +1,38 @@
+block(event).mod(view detail) {
+  lost-center: 100%;
+
+  elem(header) {
+    lost-column: 1/1 1 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 5em;
+  }
+
+  elem(back) {
+    width: 9em;
+    padding-top: 1em;
+    box-sizing: border-box;
+  }
+
+  elem(image) {
+    max-height: 530px;
+  }
+
+  elem(title) {
+    lost-column: 1/1 1 0px;
+    margin-bottom: 4em;
+  }
+
+  elem(content) {
+    lost-column: 3/5 0 0px;
+    padding-bottom: 2em;
+  }
+
+  elem(aside) {
+    lost-column: 2/5 1 30px;
+    background-color: hsl(0, 0%, 90%);
+    padding: 30px 50px;
+    box-sizing: border-box;
+  }
+}

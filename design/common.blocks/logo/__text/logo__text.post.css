@@ -1,0 +1,7 @@
+block(logo).elem(text) {
+  white-space: nowrap;
+  font-size: inherit;
+  font-variant: small-caps;
+  font-feature-settings: 'smcp';
+  margin-left: 10px;
+}

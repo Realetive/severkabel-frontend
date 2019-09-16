@@ -1,0 +1,5 @@
+block(logo).mod(contrast) {
+  elem(icon) {
+    width: 21px;
+  }
+}

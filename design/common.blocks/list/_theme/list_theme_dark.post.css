@@ -1,0 +1,3 @@
+block(list).mod(theme dark) {
+  --list-color: var(--theme-color-dark);
+}

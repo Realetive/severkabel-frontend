@@ -1,0 +1,14 @@
+block(list).mod(of contacts) {
+  elem(item) + elem(item) {
+    margin-top: 1em;
+  }
+
+  elem(term) {
+    color: #004E87;
+    font-weight: 600;
+  }
+
+  elem(definition) {
+    margin: 0;
+  }
+}

@@ -1,0 +1,65 @@
+block(page).elem(section).mod(view header) {
+  padding-top: 5em;
+  box-sizing: border-box;
+  margin-bottom: 160px;
+
+  @media (min-width: 1024px) {
+    padding-top: 5em;
+    margin-bottom: 140px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 240px;
+  }
+
+  elem(layout) {
+    lost-center: 100%;
+    overflow: visible;
+    position: relative;
+  }
+
+  elem(content) {
+    box-sizing: border-box;
+
+    @media (min-width: 1024px) {
+      width: 70%;
+      margin-right: -20%;
+      padding-top: 7em;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  elem(description) {
+    max-width: 380px;
+  }
+
+  elem(aside) {
+    width: 100%;
+    margin-bottom: -160px;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+      margin-bottom: -140px;
+    }
+
+    @media (min-width: 1440px) {
+      margin-bottom: -240px;
+    }
+  }
+
+  elem(image) {
+    display: block;
+    box-shadow: 0px 10px 10px -10px hsl(0, 0%, 13%);
+  }
+
+  elem(back) {
+    margin-bottom: 1.5em;
+    display: inline-block;
+    color: #fff;
+  }
+
+  elem(heading) {
+    margin-bottom: 1.5em;
+  }
+}

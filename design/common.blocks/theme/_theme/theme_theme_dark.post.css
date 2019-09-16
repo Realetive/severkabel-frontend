@@ -1,0 +1,13 @@
+:root,
+block(theme).mod(theme dark) {
+  --theme-color-dark: #fff;
+  --theme-background-color-dark: #000;
+  --theme-text-stroke-color-dark: #c7e5fc;
+}
+
+/*
+[class$="theme_dark"] {
+  background-color: #000;
+  color: #fff;
+}
+*/

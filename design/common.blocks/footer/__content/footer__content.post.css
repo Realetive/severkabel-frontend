@@ -1,0 +1,17 @@
+block(footer).elem(content) {
+  lost-center: 100%;
+
+  @media (min-width: 1024px) {
+    elem(menu) {
+      lost-column: 3/4 0 0px;
+    }
+
+    elem(contacts) {
+      lost-column: 1/4 1 30px;
+      padding-top: .5em;
+      padding-bottom: .5em;
+      box-sizing: border-box;
+      text-align: right;
+    }
+  }
+}

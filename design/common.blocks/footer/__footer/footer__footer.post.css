@@ -1,0 +1,35 @@
+block(footer).elem(footer) {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  flex-direction: column;
+
+  @media (min-width: 961px) {
+    flex-direction: row;
+  }
+
+  elem(item) {
+    @media (min-width: 961px) {
+      max-width: 35%;
+    }
+
+    & + elem(item) {
+      margin-top: 20px;
+
+      @media (min-width: 961px) {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+
+    @media (min-width: 961px) {
+      &:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+}

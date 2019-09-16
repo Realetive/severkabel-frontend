@@ -1,0 +1,35 @@
+block(table).mod(view payments) {
+  width: 100%;
+
+  @media (max-width: 960px) {
+    display: block;
+  }
+
+  elem(body),
+  elem(footer),
+  elem(row) {
+    @media (max-width: 960px) {
+      display: block;
+    }
+  }
+
+  elem(cell) {
+    padding: 4px 6px;
+    box-sizing: border-box;
+
+    @media (max-width: 960px) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    mod(type work) {
+      background-color: #b5ffb3;
+    }
+
+    mod(type vocation) {
+      background-color: #dfe2ff;
+    }
+  }
+
+}

@@ -1,0 +1,3 @@
+block(list) {
+  color: var(--list-color, inherit);
+}

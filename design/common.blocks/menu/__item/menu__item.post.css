@@ -1,0 +1,16 @@
+block(menu).elem(item) {
+  position: relative;
+  white-space: nowrap;
+
+  cursor: default;
+  padding-left: 1.5em;
+  padding-right: .5em;
+
+  mod(disabled) {
+    opacity: 0.3;
+  }
+
+  mod(checked) {
+    background: 5px 50% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16'%3E%3Cpath d='M13.5.5l-8 12L1.7 8l-1 1.6L5.6 15l9.1-13.4z'/%3E%3C/svg%3E");
+  }
+}

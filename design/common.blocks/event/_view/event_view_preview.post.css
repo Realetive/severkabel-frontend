@@ -1,0 +1,7 @@
+block(event).mod(view preview) {
+  --event-date-size: 14px;
+
+  elem(image) {
+    margin-bottom: 1.7rem;
+  }
+}

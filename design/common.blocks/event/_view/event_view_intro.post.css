@@ -1,0 +1,9 @@
+block(event).mod(view intro).mod(view intro) {
+  elem(date) {
+    margin-bottom: .5em;
+  }
+
+  elem(title) {
+    margin-bottom: .5em;
+  }
+}

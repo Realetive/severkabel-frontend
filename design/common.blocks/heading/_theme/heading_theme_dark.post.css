@@ -1,0 +1,4 @@
+block(heading).mod(theme dark) {
+  --heading-color: var(--theme-color-dark);
+  --heading-text-stroke-color: var(--theme-text-stroke-color-dark);
+}

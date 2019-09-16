@@ -1,0 +1,12 @@
+block(label) {
+  display: block;
+
+  @each $size,
+    $fontSize in
+    (   xs,     s,     m,     l,    xl,   xxl),
+    ( 12px,  14px,  16px,  18px,  20px,  24px) {
+    mod(size $size) {
+      font-size: $fontSize;
+    }
+  }
+}

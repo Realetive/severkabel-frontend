@@ -1,0 +1,11 @@
+block(event).elem(date) {
+  font-size: var(--event-date-size, 1rem);
+  font-weight: 600;
+  color: hsl(0, 0%, 77%);
+  margin-bottom: .5em;
+  display: inline-block;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 1em;
+  }
+}

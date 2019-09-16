@@ -1,0 +1,9 @@
+block(header).elem(hamburger) {
+  margin-left: 1em;
+  position: relative;
+  top: -7px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}

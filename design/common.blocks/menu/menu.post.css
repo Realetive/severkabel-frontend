@@ -1,0 +1,21 @@
+block(menu) {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* Using pseudo-elements intead of paddings because of Firefox bug with bottom padding (#1158):
+     * https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+
+  @each $size,
+    $fontSize in
+    (   xs,     s,     m,     l,    xl,   xxl),
+    ( 12px,  14px,  16px,  18px,  20px,  24px) {
+    mod(size $size) {
+      font-size: $fontSize;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+block(page).elem(layout).mod(width wide) {
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (min-width: 421px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media (min-width: 831px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media (min-width: 961px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: 1201px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media (min-width: 1441px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}

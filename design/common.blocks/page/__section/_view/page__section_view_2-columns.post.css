@@ -1,0 +1,35 @@
+block(page).elem(section).mod(view 2-columns) {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  box-sizing: border-box;
+
+  elem(layout) {
+    lost-center: 100%;
+  }
+
+  elem(aside) {
+    font-weight: 600;
+    color: #004E87;
+
+    @media (min-width: 1024px) {
+      lost-column: 1/4 0 0px;
+    }
+  }
+
+  elem(content) {
+
+    @media (min-width: 1024px) {
+      lost-column: 3/4 1 0px;
+    }
+  }
+
+  elem(description) {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    box-sizing: border-box;
+
+    @media (min-width: 1024px) {
+      columns: 2;
+    }
+  }
+}

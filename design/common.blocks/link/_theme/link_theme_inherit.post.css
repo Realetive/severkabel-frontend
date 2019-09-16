@@ -1,0 +1,5 @@
+block(link).mod(theme inherit) {
+  font: inherit;
+  text-decoration: inherit;
+  color: inherit;
+}

@@ -1,0 +1,32 @@
+block(page).elem(intro) {
+  padding-top: 17em;
+  padding-bottom: 8em;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+
+  elem(intro-heading) {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+
+    @media (min-width: 1024px) {
+      font-size: 54px;
+    }
+  }
+
+  elem(intro-description) {
+    max-width: 276px;
+    margin-bottom: 2em;
+
+    @media (min-width: 1024px) {
+      max-width: 512px;
+      font-size: 18px;
+    }
+  }
+
+  elem(intro-action) {
+    @media (min-width: 1024px) {
+      text-align: right;
+    }
+  }
+}

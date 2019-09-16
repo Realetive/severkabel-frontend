@@ -1,0 +1,61 @@
+block(input).mod(type range) {
+  display: block;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: 769px) {
+    display: flex;
+    align-items: center;
+  }
+
+  elem(label) {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+
+    @media (min-width: 769px) {
+      white-space: nowrap;
+      float: none;
+      width: auto;
+    }
+  }
+
+  elem(label).mod(type min) {
+    padding-right: 10px;
+    float: left;
+    text-align: left;
+
+    @media (min-width: 769px) {
+      order: 10;
+    }
+  }
+
+  elem(label).mod(type max) {
+    padding-left: 10px;
+    float: right;
+    text-align: right;
+
+    @media (min-width: 769px) {
+      order: 30;
+    }
+  }
+
+  elem(box) {
+    float: left;
+
+    @media (min-width: 769px) {
+      display: flex;
+      position: relative;
+      float: none;
+      order: 20;
+    }
+  }
+
+  elem(control) {
+
+  }
+}

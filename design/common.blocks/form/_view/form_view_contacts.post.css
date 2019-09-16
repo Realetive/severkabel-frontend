@@ -1,0 +1,15 @@
+block(form).mod(view contacts) {
+  elem(heading) {
+    font-weight: 600;
+
+    mod(size l) {
+      font-size: 16px;
+      color: #004e87;
+    }
+
+    mod(size xxl) {
+      font-size: 34px;
+      margin-top: 1em;
+    }
+  }
+}

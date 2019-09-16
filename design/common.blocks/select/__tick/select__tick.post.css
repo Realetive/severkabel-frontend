@@ -1,0 +1,19 @@
+block(select).elem(tick) {
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z'/%3E%3C/svg%3E");
+  padding: .25em;
+  box-sizing: content-box;
+  background-origin: content-box;
+  width: .6875em;
+  height: .375em;
+  transition: transform 0.1s ease-out;
+}
+
+block(select).mod(opened) {
+
+  elem(tick) {
+    transform: rotate(-180deg);
+  }
+}

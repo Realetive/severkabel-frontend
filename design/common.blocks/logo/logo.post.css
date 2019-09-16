@@ -1,0 +1,7 @@
+block(logo) {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  font-size: 1.25rem;
+}

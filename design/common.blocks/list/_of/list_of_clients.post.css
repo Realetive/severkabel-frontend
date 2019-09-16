@@ -1,0 +1,17 @@
+block(list).mod(of clients) {
+  lost-center: 100%;
+  align-items: center;
+  align-content: center;
+
+  elem(item) {
+    lost-column: 1/2 2 30px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+    @media (min-width: 1024px) {
+      lost-column: 1/4 4 30px;
+      padding: 50px;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+:root,
+block(theme) {
+  --default-color: #000;
+  --default-background-color: #fff;
+  --default-heading-text-stroke-color: #000;
+}

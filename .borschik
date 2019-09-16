@@ -1,0 +1,17 @@
+{
+  "paths" : {
+    "./static": "/"
+  },
+  "freeze_paths": {
+    "node_modules/**"       : ":base64:"
+  , "node_modules/**/*.svg" : ":encodeURIComponent:"
+  , "**/*.blocks/font/**"   : "static/assets/font"
+  , "**/*.blocks/**/*.svg"  : "static/assets/img"
+  , "**/*.blocks/**/*.jpg"  : "static/assets/img"
+  , "**/*.blocks/**/*.png"  : "static/assets/img"
+  , "**/*.blocks/**/*.mp4"  : "static/assets/video"
+  , "**/*.blocks/**/*.ogv"  : "static/assets/video"
+  , "**/*.blocks/**/*.ogg"  : "static/assets/video"
+  , "**/*.blocks/**/*.webm" : "static/assets/video"
+  }
+}

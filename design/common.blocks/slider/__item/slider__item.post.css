@@ -1,0 +1,4 @@
+block(slider).elem(item) {
+  display: block;
+  flex: 0 0 100vw;
+}

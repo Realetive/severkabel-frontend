@@ -1,0 +1,16 @@
+block(header).elem(contacts) {
+  display: inline-flex;
+  align-self: center;
+  margin-left: auto;
+  color: inherit;
+  line-height: 1.333;
+  font-weight: 600;
+
+  block(button).elem(text) {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: inline-block;
+    }
+  }
+}

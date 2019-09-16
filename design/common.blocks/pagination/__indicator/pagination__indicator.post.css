@@ -1,0 +1,15 @@
+block(pagination).elem(indicator) {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #cecaca;
+
+  & + & {
+    margin-left: 6px;
+  }
+
+  mod(active) {
+    background-color: #ec366d;
+  }
+}

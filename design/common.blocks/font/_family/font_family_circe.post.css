@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-regular.eot');
+	src: local('Circe'), local('circe-regular'),
+		url('circe-regular.eot?#iefix') format('embedded-opentype'),
+		url('circe-regular.woff') format('woff'),
+		url('circe-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-extra-light.eot');
+	src: local('Circe extra-light'), local('circe-extra-light'),
+		url('circe-extra-light.eot?#iefix') format('embedded-opentype'),
+		url('circe-extra-light.woff') format('woff'),
+		url('circe-extra-light.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-thin.eot');
+	src: local('Circe Thin'), local('circe-thin'),
+		url('circe-thin.eot?#iefix') format('embedded-opentype'),
+		url('circe-thin.woff') format('woff'),
+		url('circe-thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-light.eot');
+	src: local('Circe Light'), local('circe-light'),
+		url('circe-light.eot?#iefix') format('embedded-opentype'),
+		url('circe-light.woff') format('woff'),
+		url('circe-light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-bold.eot');
+	src: local('Circe Bold'), local('circe-bold'),
+		url('circe-bold.eot?#iefix') format('embedded-opentype'),
+		url('circe-bold.woff') format('woff'),
+		url('circe-bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('circe-extra-bold.eot');
+	src: local('Circe ExtraBold'), local('circe-extra-bold'),
+		url('circe-extra-bold.eot?#iefix') format('embedded-opentype'),
+		url('circe-extra-bold.woff') format('woff'),
+		url('circe-extra-bold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}

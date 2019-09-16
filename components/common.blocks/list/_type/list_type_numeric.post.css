@@ -1,0 +1,8 @@
+block(list).mod(type numeric) {
+  list-style-type: decimal;
+
+  &:lang(my) {
+    list-style-type: myanmar   
+  }
+}
+  

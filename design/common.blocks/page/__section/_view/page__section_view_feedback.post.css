@@ -1,0 +1,20 @@
+block(page).elem(section).mod(view feedback) {
+  elem(form) {
+    background-color: hsl(205, 100%, 26%);
+    padding: 2em;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1024px) {
+    lost-center: 100%;
+
+    elem(map),
+    elem(form) {
+      lost-column: 1/2 2 0px;
+    }
+
+    elem(form) {
+      padding: 4em;
+    }
+  }
+}

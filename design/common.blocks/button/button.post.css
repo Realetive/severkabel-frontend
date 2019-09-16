@@ -1,0 +1,67 @@
+block(button) {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  user-select: none;
+  font: inherit;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 200ms;
+
+  background: inherit;
+  color: var(--button-color, inherit);
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  /*
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+  }
+  */
+
+  elem(text) {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    color: inherit;
+    min-width: 1em;
+    min-height: 1em;
+    text-align: center;
+    padding: 0 1em;
+  }
+
+  block(icon) + block(button).elem(text) {
+    padding-left: 0;
+    line-height: 1.25;
+  }
+
+  @each $size,
+    $fontSize in
+    (   xs,           s,     m,         l,       xl,     xxl),
+    ( 0.75rem, 0.875rem,  1rem,  1.125rem,  1.25rem,  1.5rem) {
+    mod(size $size) {
+      font-size: $fontSize;
+    }
+  }
+
+  mod(focused-hard) {
+    z-index: 1;
+  }
+}

@@ -1,0 +1,24 @@
+html {
+  height: 100%;
+  font-size: 14px;
+}
+
+block(page) {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.666666667;
+  background-color: #fbfbfb;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: 1024px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 16px;
+    line-height: 1.6875;
+  }
+}

@@ -1,0 +1,13 @@
+:root,
+block(theme).mod(theme light) {
+  --theme-color-light: var(--default-color, #000);
+  --theme-background-color-light: var(--default-background-color, #fff);
+  --theme-text-stroke-color-light: var(--default-heading-text-stroke-color, #000);
+}
+
+/*
+[class$="theme_light"] {
+  background-color: #fff;
+  color: #000;
+}
+*/

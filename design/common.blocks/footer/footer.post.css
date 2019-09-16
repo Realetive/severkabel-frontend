@@ -1,0 +1,8 @@
+block(footer) {
+  background-color: var(--theme-footer-background-color);
+  color: var(--theme-footer-color);
+
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  box-sizing: border-box;
+}

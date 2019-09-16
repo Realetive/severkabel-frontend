@@ -1,0 +1,4 @@
+block(header).mod(theme light) {
+  --header-color: var(--theme-color-light);
+  --header-background-color: var(--theme-background-color-light);
+}

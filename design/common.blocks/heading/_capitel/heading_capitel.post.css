@@ -1,0 +1,4 @@
+block(heading).mod(capitel) {
+  font-variant: small-caps;
+  font-feature-settings: 'smcp';
+}

@@ -1,0 +1,9 @@
+block(page).elem(section).mod(view features) {
+  padding-top: 5em;
+  padding-bottom: 3.75em;
+  box-sizing: bolder-box;
+
+  elem(heading) {
+    margin-bottom: 2.5em;
+  }
+}

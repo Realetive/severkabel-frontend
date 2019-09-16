@@ -1,0 +1,22 @@
+block(page).elem(heading) {
+
+  @each $size, $fontSize, $fontSize1024, $fontSize1440, $fontWeight in
+    (  xs,        s,      m,    l,      xl,    xxl),
+    (1rem, 1.125rem, 1.5rem, 2rem, 2.25rem, 1.7rem),
+    (1rem, 1.125rem, 1.5rem, 2rem, 2.25rem,  10rem),
+    (1rem, 1.125rem, 1.5rem, 2rem, 2.25rem,  12rem),
+    ( 600, 600, 600, 600, 600, 900) {
+    .mod(size $size) {
+      font-size: $fontSize;
+      font-weight: $fontWeight;
+
+      @media (min-width: 1024px) {
+        font-size: $fontSize1024;
+      }
+
+      @media (min-width: 1440px) {
+        font-size: $fontSize1440;
+      }
+    }
+  }
+}

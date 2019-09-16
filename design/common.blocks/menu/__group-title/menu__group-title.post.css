@@ -1,0 +1,14 @@
+block(menu).elem(group-title) {
+  font-size: .75em;
+  font-weight: bold;
+  white-space: nowrap;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  background-color: #fff;
+  color: #666;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

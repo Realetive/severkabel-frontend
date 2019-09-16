@@ -1,0 +1,6 @@
+block(fieldset) {
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  color: var(--fieldset-color, inherit);
+}

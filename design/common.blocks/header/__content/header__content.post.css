@@ -1,0 +1,9 @@
+block(header).elem(content) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.25em 0;
+  box-sizing: border-box;
+}

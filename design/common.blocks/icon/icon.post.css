@@ -1,0 +1,7 @@
+block(icon) {
+  display: inline-block;
+  vertical-align: baseline;
+  text-transform: none;
+  background-size: cover;
+  font-size: inherit;
+}

@@ -1,0 +1,4 @@
+block(footer).mod(theme dark) {
+  --theme-footer-background-color: hsl(0, 0%, 11%);
+  --theme-footer-color: hsl(0, 0%, 59%);
+}

@@ -1,0 +1,14 @@
+block(pagination).elem(link) {
+  background-color: #fff;
+  /* color: #7930b2; */
+  /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5); */
+
+  /* & + & {
+    margin-left: 12px;
+  } */
+
+  &:last-child {
+    background-color: #004E87;
+    color: #fff;
+  }
+}

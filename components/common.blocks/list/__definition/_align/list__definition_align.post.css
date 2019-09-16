@@ -1,0 +1,11 @@
+.block(list).elem(definition).mod(align center) {
+  text-align: center
+}
+
+.block(list).elem(definition).mod(align start) {
+  text-align: start
+}
+
+.block(list).elem(definition).mod(align end) {
+  text-align: end
+}

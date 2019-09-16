@@ -1,0 +1,6 @@
+block(page).elem(section).mod(view cooperation) {
+  background-color: hsl(0, 0%, 95%);
+  /* background-image: url(page__section.png); */
+  padding-top: 34px;
+  box-sizing: border-box;
+}

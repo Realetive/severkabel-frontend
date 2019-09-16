@@ -1,0 +1,18 @@
+block(list).mod(of cooperation) {
+  lost-center: 100%;
+  align-items: center;
+  align-content: center;
+
+  elem(item) {
+    lost-column: 1/2 2 30px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @media (min-width: 1024px) {
+      lost-column: 1/4 3 30px;
+      padding: 40px;
+    }
+  }
+}

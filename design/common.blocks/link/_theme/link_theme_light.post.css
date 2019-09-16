@@ -1,0 +1,3 @@
+block(link).mod(theme light) {
+  --theme-link-color: hsl(194, 100%, 42%);
+}

@@ -1,0 +1,35 @@
+module.exports = {
+  levels: {
+    "components/common.blocks": { default: true },
+    "components/desktop.blocks": {},
+    "design/common.blocks": {},
+    "design/desktop.blocks": {},
+  },
+  libs: {
+    "node_modules/bem-core/common.blocks": {},
+    "node_modules/bem-core/desktop.blocks": {},
+    "node_modules/bem-components/common.blocks": {},
+    "node_modules/bem-components/desktop.blocks": {},
+  },
+  modules: {
+   "bem-tools": {
+      plugins: {
+        create: {
+          techs: [ "post.css", "browser.js", "bemtree.js", "bemhtml.js", "deps.js", "md" ],
+          templateFolder: ".bem/templates",
+          levels: {
+            "components/common.blocks": {
+              default: true,
+              techs: [ "browser.js", "bemtree.js", "bemhtml.js", "deps.js", "md" ]
+            },
+            "design/common.blocks": {
+              techs: [ "post.css", "deps.js" ]
+            },
+            "design/desktop.blocks": {},
+          },
+        }
+      }
+    },
+  }
+}
+

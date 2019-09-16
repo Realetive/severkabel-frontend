@@ -1,0 +1,12 @@
+.git
+.bem
+.bin
+.enb/tmp
+.vscode
+
+bundles/*/*
+!bundles/*/*.bemdecl.js
+
+dist/
+node_modules/
+static/assets/

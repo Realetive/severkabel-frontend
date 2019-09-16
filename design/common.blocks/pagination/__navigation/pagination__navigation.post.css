@@ -1,0 +1,3 @@
+block(pagination).elem(navigation) {
+  display: inline-flex;
+}

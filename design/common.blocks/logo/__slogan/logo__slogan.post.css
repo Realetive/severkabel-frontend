@@ -1,0 +1,7 @@
+block(logo).elem(slogan) {
+  font-size: 12px;
+
+  @media (min-width: 1441px) {
+    font-size: 14px;
+  }
+}

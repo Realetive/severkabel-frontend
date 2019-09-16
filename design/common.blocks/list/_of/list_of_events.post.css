@@ -1,0 +1,9 @@
+block(list).mod(of events) {
+  padding-bottom: 1em;
+
+  elem(item) {
+    & + elem(item) {
+      margin-top: 20px;
+    }
+  }
+}

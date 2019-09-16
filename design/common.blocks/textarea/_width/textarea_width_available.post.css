@@ -1,0 +1,4 @@
+block(textarea).mod(width available) {
+  display: inline-block;
+  width: 100%;
+}

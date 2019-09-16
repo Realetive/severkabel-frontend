@@ -1,0 +1,37 @@
+block(page).elem(section).mod(view events) {
+  elem(events) {
+    margin-top: -2em;
+  }
+
+  elem(aside) {
+    margin-top: 2em;
+  }
+
+  @media (min-width: 1024px) {
+    elem(events) {
+      lost-center: 100%;
+      margin-top: -3em;
+    }
+
+    elem(heading) {
+      lost-column: 1/1 1 0px;
+    }
+
+    elem(content) {
+      lost-column: 3/5 0 0px;
+      margin-top: 1em;
+    }
+
+    elem(aside) {
+      lost-column: 2/5 1 30px;
+      margin-top: 1em;
+      background-color: hsl(0, 0%, 90%);
+      padding: 30px 50px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+    }
+  }
+}

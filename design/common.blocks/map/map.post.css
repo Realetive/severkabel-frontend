@@ -1,0 +1,11 @@
+block(map) {
+  width: 100%;
+  height: 115.625vw;
+  background-image: url(map.jpg);
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 1024px) {
+    height: auto;
+  }
+}

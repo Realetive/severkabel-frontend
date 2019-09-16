@@ -1,0 +1,4 @@
+block(link) {
+  color: var(--theme-link-color, inherit);
+  text-decoration: none;
+}

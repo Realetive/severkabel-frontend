@@ -1,0 +1,8 @@
+block(menu).mod(theme light) {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #000;
+
+  elem(item).mod(hovered) {
+    color: #444;
+  }
+}

@@ -1,0 +1,4 @@
+block(page).elem(section).mod(view intro) {
+  position: relative;
+  overflow: hidden;
+}

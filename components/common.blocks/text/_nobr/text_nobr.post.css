@@ -1,0 +1,3 @@
+block(text).mod(nobr) {
+  white-space: nowrap;
+}

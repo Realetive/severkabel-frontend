@@ -1,0 +1,7 @@
+block(input).mod(width available) {
+  width: 100%;
+
+  elem(box) {
+    width: 100%;
+  }
+}

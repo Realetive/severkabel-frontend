@@ -1,0 +1,8 @@
+( {
+  mustDeps: {
+    elems: [
+      'term',
+      'definition',
+    ],
+  },
+} )

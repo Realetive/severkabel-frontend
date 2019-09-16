@@ -1,0 +1,5 @@
+block(page).elem(section).mod(view form) {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  box-sizing: border-box;
+}

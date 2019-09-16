@@ -1,0 +1,11 @@
+block(page).elem(section).mod(view partners) {
+  padding: 3em 0;
+  box-sizing: border-box;
+
+  elem(heading) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+}

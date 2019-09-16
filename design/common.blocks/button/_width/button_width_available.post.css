@@ -1,0 +1,4 @@
+block(button).mod(width available) {
+  display: block;
+  width: 100%;
+}

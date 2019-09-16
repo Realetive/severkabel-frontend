@@ -1,0 +1,34 @@
+block(page).elem(section).mod(view contacts) {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  elem(layout) {
+    display: flex;
+    padding-top: 8em;
+    lost-center: 100%;
+  }
+
+  elem(aside) {
+    background: #fff;
+    padding: 0;
+  }
+
+  elem(form) {
+    padding: 2em;
+    box-sizing: border-box;
+  }
+
+  elem(contacts) {
+    padding: 2em;
+    box-sizing: border-box;
+    border-top: 2px solid #004e87;
+  }
+
+  @media (min-width: 1024px) {
+    elem(aside) {
+      lost-column: 2/5 1 0px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
