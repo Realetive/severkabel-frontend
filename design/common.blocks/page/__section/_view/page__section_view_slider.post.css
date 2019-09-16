@@ -150,7 +150,7 @@ block(page).elem(section).mod(view slider) {
       lost-column: 1/2 1 40px;
       padding-left: 0;
       padding-right: 0;
-      max-width: 50vh;
+      max-width: 520px;
 
       &:before,
       &:after {
