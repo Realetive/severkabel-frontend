@@ -10,7 +10,6 @@ block( 'link' )(
       } else {
         ctx.url = url
       }
-
     } catch ( error ) {
       console.error( error );
     }
