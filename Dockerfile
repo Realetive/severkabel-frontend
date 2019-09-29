@@ -3,12 +3,17 @@
 # rm $HOME/_dev/severkabel/docker.tar
 # docker save severkabel > $HOME/_dev/severkabel/docker.tar && \
 # say 'Импорт завершен' && \
-# scp -i $HOME/_dev/nevatrip/_security/deploy_rsa \
-#        $HOME/_dev/severkabel/docker.tar \
-#        deploy@new.severkabel.ru:/root/severkabel/docker.tar && \
+# scp -r $HOME/_dev/severkabel/site/.bin \
+#     root@new.severkabel.ru:/root/severkabel/.bin && \
+# ssh root@new.severkabel.ru  'chmod -R +x /root/severkabel/.bin/' && \
+# say 'Копирование исполняемых файлов завершено' && \
+# scp $HOME/_dev/severkabel/docker.tar \
+#     root@new.severkabel.ru:/root/severkabel/docker.tar && \
 # say 'Загрузка завершена' && \
-# ssh -i $HOME/_dev/nevatrip/_security/deploy_rsa deploy@new.severkabel.ru 'sh ./severkabel/.bin/start.sh' && \
+# ssh root@new.severkabel.ru 'sh /root/severkabel/.bin/start.sh' && \
 # say 'Развёртывание завершено'
+
+# sudo apt-get autoremove
 
 FROM node:10-alpine
 
