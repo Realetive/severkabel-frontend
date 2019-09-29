@@ -55,14 +55,14 @@ app.post( '*', ( { body }, res ) => {
         port: 465,
         secure: true,
         auth: {
-          user: 'realetive@gmail.com',
-          pass: 'Oksana-travel-ruler-nevatrip',
+          user: 'mail@severkabel.ru',
+          pass: 'Nvt47Xcw',
         },
       } );
 
       const mailOptions = {
-        from: '"SeverKabel" <realetive@gmail.com>',
-        to: [ 'severkabel@romanganin.ru' ],
+        from: '"SeverKabel" <mail@severkabel.ru>',
+        to: [ 'tatiana@severkabel.ru', 'severkabel@romanganin.ru' ],
         subject: `${ name } / ${ phone }`,
         replyTo: email,
         text: `${ name } / ${ phone } : ${ message }`,
@@ -101,8 +101,11 @@ app.all( '*', async ( req, res, next ) => {
 
     res.status( route.status || 200 );
 
+    console.time( 'Render' );
     if ( route.page ) {
       const html = await render( req, res, route );
+
+      console.timeEnd( 'Render' );
 
       return html;
     }
