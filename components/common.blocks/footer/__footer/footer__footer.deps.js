@@ -6,6 +6,7 @@
         'disclaimer',
         'policy',
         'author',
+        'policy',
       ],
     },
   ],
