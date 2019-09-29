@@ -1,3 +1,3 @@
-block( 'footer' ).elem( 'footer' ).content()( {
-  elem: 'about',
-} );
+block( 'footer' )
+  .elem( 'footer' )
+  .content()( [ { elem: 'about' }, { elem: 'policy' } ] );

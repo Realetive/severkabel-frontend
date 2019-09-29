@@ -163,7 +163,16 @@ block( 'form' ).mod( 'view', 'contacts' )( {
                 elem: 'control',
                 content: {
                   block: 'checkbox',
-                  text: 'Я согласен с предосталением персональных данных',
+                  text: [
+                    'Я согласен с предосталением ',
+                    {
+                      block: 'link',
+                      mods: { view: 'text' },
+                      url: '/policy',
+                      target: '_blank',
+                      content: 'персональных данных',
+                    },
+                  ],
                 },
               },
             ],

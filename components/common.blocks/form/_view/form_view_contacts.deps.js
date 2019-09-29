@@ -8,11 +8,7 @@
         },
       },
       {
-        elems: [
-          'header',
-          'content',
-          'footer',
-        ],
+        elems: [ 'header', 'content', 'footer' ],
       },
       {
         block: 'heading',
@@ -49,6 +45,10 @@
       },
       {
         block: 'paragraph',
+      },
+      {
+        block: 'link',
+        mods: { view: 'text' },
       },
     ],
   },
