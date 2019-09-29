@@ -1,11 +1,13 @@
 block(page).elem(section).mod(view contacts) {
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 
   elem(layout) {
     display: flex;
     padding-top: 8em;
     lost-center: 100%;
+    position: relative;
   }
 
   elem(aside) {
@@ -24,9 +26,19 @@ block(page).elem(section).mod(view contacts) {
     border-top: 2px solid #004e87;
   }
 
+  elem(map) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   @media (min-width: 1024px) {
     elem(aside) {
-      max-width: 520px;
+      max-width: 560px;
       margin-left: auto;
       margin-right: 0;
     }

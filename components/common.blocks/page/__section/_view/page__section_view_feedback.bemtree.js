@@ -11,6 +11,6 @@ block( 'page' )
       mods: { view: 'contacts' },
       mix: { block: node.block, elem: 'form' },
       subheading: 'Связаться с нами',
-      description: 'Заполните форму и задайте свой вопрос в графе «Сообщения»',
+      description: 'Заполните форму и задайте свой вопрос в графе «Ваше сообщение»',
     },
   ] );

@@ -5,7 +5,9 @@ modules.define( 'form', [ 'button' ], ( provide, Button, Form ) => {
         inited () {
           this.__base.apply( this, arguments );
 
-          // this._domEvents().on('change', this._check.bind(this) );
+          this._events().on( 'success', event => {
+            event.target.domElem[ 0 ].submit();
+          } );
         },
       },
     },

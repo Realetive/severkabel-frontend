@@ -9,6 +9,9 @@
         block: 'list',
         mods: { of: 'contacts' },
       },
+      {
+        block: 'map',
+      },
     ],
   },
 ];

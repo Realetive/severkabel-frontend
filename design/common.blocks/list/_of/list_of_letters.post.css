@@ -25,4 +25,10 @@ block(list).mod(of letters) {
     background-size: cover;
     background-origin: content-box;
   }
+
+  elem(description) {
+    @media (min-width: 1024px) {
+      color: #000;
+    }
+  }
 }
