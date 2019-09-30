@@ -1,18 +1,14 @@
 const client = require( '../request/_request' );
 
 const api = async () => {
-  const response = await Promise.all( [
+  const [ settings, page, events ] = await Promise.all( [
     client.getDocument( 'serviceBasedData' ),
     client.getDocument( 'events' ),
-    client.fetch( '*[_type == "event"] {...}', {} ),
+    client.fetch( '*[_type == "event"] | order(publishedAt) {...}', {} ),
   ] );
 
-  return {
-    settings: response[ 0 ],
-    page: response[ 1 ],
-    events: response[ 2 ],
-  }
-}
+  return { settings, page, events };
+};
 
 const action = async ( context, params ) => ( {
   page: 'events',
