@@ -21,7 +21,12 @@ block(header).elem(menu) {
   }
 
   @media (min-width: 1024px) {
-    max-height: auto;
+    max-height: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 
   mod(visible) {
