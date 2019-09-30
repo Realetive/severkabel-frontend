@@ -1,5 +1,5 @@
 block(navigation).mod(view header) {
-  font-size: 18px;
+  /* font-size: 18px; */
 
   @media (min-width: 1024px) {
     font-size: 1rem;

@@ -1,30 +1,31 @@
 block(header).elem(menu) {
-  display: none;
+  /* display: none; */
+  display: flex;
   align-items: center;
   flex: 1;
   justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 450ms;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    background-color: var(--header-background-color);
+
+    justify-content: space-between;
+    padding-right: 1em;
+    padding-left: 1em;
+    box-sizing: border-box;
+    align-items: flex-end;
+    box-shadow: 0 6px 10px -6px #000;
+  }
 
   @media (min-width: 1024px) {
-    display: flex;
+    max-height: auto;
   }
 
   mod(visible) {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: hsl(205, 100%, 26%);
-    z-index: 10;
-
-    justify-content: space-between;
-    padding-top: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    align-items: flex-end;
+    max-height: 100vh;
   }
 }
 

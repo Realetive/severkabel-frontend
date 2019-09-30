@@ -1,5 +1,5 @@
 block( 'navigation' ).mod( 'view', 'header' ).content()( ( { data: { params } } ) => [
-  { elem: 'close' },
+  // { elem: 'close' },
   {
     block: 'menu',
     mods: {

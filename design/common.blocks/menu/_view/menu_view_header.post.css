@@ -4,11 +4,9 @@ block(menu).mod(view header) {
 
   display: flex;
   flex-direction: column;
-  font-size: 28px;
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    font-size: 18px;
   }
 
   elem(item) {
@@ -18,7 +16,7 @@ block(menu).mod(view header) {
     text-align: right;
 
     & + elem(item) {
-      margin-top: 1.5em;
+      margin-top: .5em;
     }
 
     @media (min-width: 1024px) {

@@ -1,3 +1,4 @@
-block( 'header' ).content()( {
-  elem: 'content',
-} );
+block( 'header' ).content()( [
+  { elem: 'content' },
+  { elem: 'menu' },
+] );

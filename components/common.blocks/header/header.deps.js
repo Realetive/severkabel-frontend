@@ -1,9 +1,13 @@
-[ {
-  shouldDeps: [
-    { elem: 'content' },
-    {
-      block: 'page',
-      mods: { 'no-scroll': true },
-    },
-  ],
-} ]
+[
+  {
+    shouldDeps: [
+      {
+        elems: [ 'content', 'menu' ],
+      },
+      {
+        block: 'page',
+        mods: { 'no-scroll': true },
+      },
+    ],
+  },
+];

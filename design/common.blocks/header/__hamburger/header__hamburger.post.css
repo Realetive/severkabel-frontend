@@ -2,8 +2,13 @@ block(header).elem(hamburger) {
   margin-left: 1em;
   position: relative;
   top: -7px;
+  transition: transform 450ms;
 
   @media (min-width: 1024px) {
     display: none;
+  }
+
+  mod(active) {
+    transform: rotate(90deg);
   }
 }

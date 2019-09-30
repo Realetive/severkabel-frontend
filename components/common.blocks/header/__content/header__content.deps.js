@@ -3,7 +3,6 @@
     {
       elems: [
         'logo',
-        'menu',
         'contacts',
         'hamburger',
       ],
