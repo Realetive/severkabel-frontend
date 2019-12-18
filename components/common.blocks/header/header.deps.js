@@ -2,7 +2,7 @@
   {
     shouldDeps: [
       {
-        elems: [ 'content', 'menu' ],
+        elems: [ 'content', 'menu', 'scroll' ],
       },
       {
         block: 'page',

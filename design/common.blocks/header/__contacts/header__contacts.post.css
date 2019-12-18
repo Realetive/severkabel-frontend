@@ -1,4 +1,6 @@
 block(header).elem(contacts) {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-self: center;
   margin-left: auto;

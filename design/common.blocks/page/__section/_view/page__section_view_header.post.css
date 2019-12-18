@@ -1,10 +1,12 @@
 block(page).elem(section).mod(view header) {
-  padding-top: 5em;
   box-sizing: border-box;
   margin-bottom: 160px;
 
+  elem(header) {
+    margin-bottom: 5em;
+  }
+
   @media (min-width: 1024px) {
-    padding-top: 5em;
     margin-bottom: 140px;
   }
 

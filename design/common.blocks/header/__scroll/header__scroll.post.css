@@ -1,0 +1,15 @@
+block(header).elem(scroll) {
+  display: none;
+  position: fixed;
+  top: 70vh;
+  z-index: 1;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+
+  block(icon) {
+    font-size: 3rem;
+    color: #004d85;
+  }
+}

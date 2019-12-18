@@ -1,6 +1,10 @@
 block( 'page' ).elem( 'section' ).elemMod( 'view', 'header' )( {
   content: ( { block }, { back, header, image, description } ) => [
     {
+      block: 'header',
+      mix: { block, elem: 'header' },
+    },
+    {
       elem: 'layout',
       elemMods: { width: 'tiny' },
       content: [
@@ -41,11 +45,4 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'header' )( {
       ],
     },
   ],
-} );
-
-block( 'header' )( {
-  addMods: {
-    theme: 'dark',
-    overlay: true,
-  },
 } );

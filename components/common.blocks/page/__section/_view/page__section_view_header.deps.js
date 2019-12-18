@@ -19,11 +19,5 @@
       block: 'heading',
       mods: { size: 'xxl' },
     },
-    {
-      block: 'header',
-      mods: {
-        overlay: true,
-      },
-    },
   ],
 } ]

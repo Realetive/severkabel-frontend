@@ -12,4 +12,5 @@ module.exports = {
   automake: !!process.env.AUTOMAKE,
   livereload: !!process.env.LIVERELOAD,
   logLevel: process.env.LOG_LEVEL.toLowerCase(),
+  langs: JSON.parse( process.env.LANGS ),
 };

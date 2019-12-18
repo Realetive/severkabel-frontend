@@ -1,0 +1,39 @@
+block(project).elem(indicator) {
+  background-color: #004E87;
+  color: #fff;
+  box-sizing: border-box;
+
+  padding: 36px 39px;
+  margin-bottom: 2em;
+
+  @media (min-width: 1024px) {
+    width: 255px;
+    padding: 36px 39px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 329px;
+    padding: 68px 70px 68px;
+  }
+
+  elem(indicator-index) {
+    display: block;
+    font-weight: 600;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    vertical-align: top;
+  }
+
+  elem(indicator-label) {
+    display: inline-block;
+    font-size: .25em;
+  }
+
+  elem(indicator-description) {
+    margin-top: 1em;
+    font-size: 1em;
+    line-height: 1.5;
+    letter-spacing: 0.07em;
+  }
+}

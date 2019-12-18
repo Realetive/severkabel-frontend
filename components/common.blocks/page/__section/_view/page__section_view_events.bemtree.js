@@ -2,7 +2,7 @@ block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', 'events' )
   .content()( ( node, { events, limit = 1, hasLinkToAllEvents = true } ) => {
-    const firstEvents = events.filter( event => !event.source ).splice( 0, limit );
+    const firstEvents = events.splice( 0, limit );
 
     return [
       {

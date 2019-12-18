@@ -2,4 +2,5 @@ block(header).elem(logo) {
   position: relative;
   font-size: 2em;
   margin-right: auto;
+  z-index: 1;
 }

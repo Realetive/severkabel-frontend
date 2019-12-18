@@ -1,0 +1,15 @@
+block(pswp).mod(theme light) {
+  elem(bg) {
+    background-color: #eee;
+  }
+
+  .pswp__ui--fit .pswp__caption,
+  .pswp__ui--fit .pswp__top-bar {
+    background-color: rgba(189, 189, 189, 0.3);
+  }
+
+  elem(counter),
+  .pswp__caption__center {
+    color: #000;
+  }
+}

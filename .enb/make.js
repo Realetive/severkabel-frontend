@@ -32,7 +32,7 @@ module.exports = config => {
           plugins: techs.postcssPlugins,
         }],
         [techs.borschik, {
-          minify: !__DEV__,
+          minify: false,
           freeze: true,
           source: '?.css',
           target: '?.min.css'
@@ -47,6 +47,10 @@ module.exports = config => {
           sourceSuffixes: ['bemtree', 'bemtree.js'],
           target: '.?.bemtree.prepare.js',
           // target: '?.bemtree.js',
+          engineOptions: {
+            runtimeLint: __DEV__,
+            production: !__DEV__
+          }
         }],
         [techs.borschik, {
           source: '.?.bemtree.prepare.js',
@@ -64,7 +68,8 @@ module.exports = config => {
           forceBaseTemplates: true,
           engineOptions: {
             elemJsInstances: true,
-            runtimeLint: true,
+            runtimeLint: __DEV__,
+            production: !__DEV__
           },
         }],
         [techs.borschik, {

@@ -1,10 +1,16 @@
 const imageUrlBuilder = require( '@sanity/image-url' );
 const MarkdownBemjson = require( 'markdown-bemjson' );
+const _ = require( 'lodash' );
+const { decodeHTML } = require( 'entities' );
 
 const builder = imageUrlBuilder( {
   projectId: 'p9gjsb2n',
   dataset: 'production',
 } );
+
+const decodeParagraph = entities => Array.isArray( entities )
+  ? entities.map( entity => typeof entity === 'string' ? decodeHTML( entity ) : decodeParagraph( entity ) )
+  : entities
 
 const markdownBemjson = new MarkdownBemjson( {
   isEscapeHtml: false,
@@ -13,15 +19,11 @@ const markdownBemjson = new MarkdownBemjson( {
     breaks: true,
   },
   rules: {
-    br () {
-      return {
-        tag: 'br',
-      };
-    },
+    br: () => ( { tag: 'br' } ),
     paragraph ( text ) {
       return {
         block: 'paragraph',
-        content: text,
+        content: decodeParagraph( text ),
       };
     },
     heading ( text, level ) {
@@ -56,6 +58,20 @@ const markdownBemjson = new MarkdownBemjson( {
         content: text,
       };
     },
+    list ( content, ordered ) {
+      return {
+        block: 'list',
+        mods: { type: ordered ? 'numeric' : 'circle' },
+        mix: { block: 'paragraph' },
+        content,
+      }
+    },
+    listitem ( content ) {
+      return {
+        elem: 'item',
+        content,
+      }
+    },
   },
 } );
 
@@ -70,6 +86,7 @@ block( 'root' ).replace()( ( node, ctx ) => {
 
   node._urlFor = source => builder.image( source );
   node._fromMarkdown = markdown => markdownBemjson.convert( markdown );
+  node._ = _;
 
   return {
     block: 'page',
@@ -157,8 +174,9 @@ block( 'root' ).replace()( ( node, ctx ) => {
         elem: 'meta',
         attrs: { property: 'og:site_name', content: config.appName },
       },
-      { elem: 'meta', attrs: { property: 'og:locale', content: 'ru_RU' } },
+      { elem: 'meta', attrs: { property: 'og:locale', content: config.langs[ 0 ] === 'ru' ? 'ru_RU' : 'en_US' } },
       { elem: 'meta', attrs: { property: 'og:type', content: 'website' } },
+      { html: data.api.settings.counter[ config.langs[ 0 ] ] }, // counters
     ],
     mods: { route: data.view || data.page },
   };

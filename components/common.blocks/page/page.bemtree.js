@@ -1,6 +1,6 @@
 block( 'page' )(
   content()( () => [
-    { elem: 'header' },
+    // { elem: 'header' },
     apply( 'route' ),
     { elem: 'footer' },
   ] ),

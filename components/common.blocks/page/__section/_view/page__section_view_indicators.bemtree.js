@@ -1,5 +1,5 @@
 block( 'page' ).elem( 'section' ).elemMod( 'view', 'indicators' )
-  .content()( node => [
+  .content()( ( { block, config: { langs: [ i18n ], data } } ) => [
     {
       elem: 'layout',
       content: {
@@ -11,7 +11,7 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'indicators' )
           theme: 'dark',
         },
         mix: [
-          { block: node.block, elem: 'heading', elemMods: { size: 'xxl' } },
+          { block, elem: 'heading', elemMods: { size: 'xxl' } },
         ],
         content: 'Показатели',
       },
@@ -27,23 +27,23 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'indicators' )
             type: 'description',
             of: 'indicators',
           },
-          items: node.data.api.page.indicators.map( ( { index, label, description } ) => [
+          items: data.api.page.indicators.map( ( { index, label, description } ) => [
             {
               elem: 'term',
               content: [
                 index && {
                   elem: 'index',
-                  content: index.ru,
+                  content: index[ i18n ],
                 },
                 label && {
                   elem: 'label',
-                  content: label.ru,
+                  content: label[ i18n ],
                 },
               ],
             },
             description && {
               elem: 'definition',
-              content: description.ru,
+              content: description[ i18n ],
             },
           ] ),
         },

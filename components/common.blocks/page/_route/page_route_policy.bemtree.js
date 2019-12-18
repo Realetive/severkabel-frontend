@@ -1,5 +1,6 @@
 block( 'page' ).mod( 'route', 'policy' )( {
   route: [
+    { block: 'header' },
     {
       elem: 'layout',
       elemMods: { width: 'tiny' },

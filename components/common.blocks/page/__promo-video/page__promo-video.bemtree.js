@@ -9,12 +9,12 @@ block( 'page' )
 
     return {
       block: 'video',
+      autoplay: true,
+      loop: true,
+      muted: true,
+      preload: true,
+      playsinline: true,
       attrs: {
-        autoplay: true,
-        loop: true,
-        muted: true,
-        preload: true,
-        playsinline: true,
         style: `background: transparent url(${ poster }) 50% 50% / cover no-repeat; width: 100%; height: 100%`,
       },
       poster:

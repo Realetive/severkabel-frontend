@@ -1,11 +1,11 @@
 block( 'page' ).elem( 'section' ).elemMod( 'view', 'mission' )( {
-  content: ( { block, data } ) => [
+  content: ( { block, data: { api: { page: { mission } } }, config: { langs: [ i18n ] } } ) => [
     {
       elem: 'layout',
       content: [
         {
           elem: 'aside',
-          content: data.api.page.mission.asideTitle.ru,
+          content: mission.asideTitle[ i18n ],
         },
         {
           elem: 'content',
@@ -14,7 +14,7 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'mission' )( {
               block: 'heading',
               mods: { size: 'xl' },
               mix: { block, elem: 'heading', elemMods: { size: 'xl' } },
-              content: data.api.page.mission.subTitle.ru,
+              content: mission.subTitle[ i18n ],
             },
           ],
         },
@@ -26,7 +26,7 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'mission' )( {
       content: {
         block: 'list',
         mods: { of: 'letters' },
-        letters: data.api.page.mission.gallery,
+        letters: mission.gallery,
       },
     },
   ],

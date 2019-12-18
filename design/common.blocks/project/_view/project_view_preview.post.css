@@ -1,0 +1,15 @@
+block(project).mod(view preview) {
+  position: relative;
+  box-shadow: 0 6px 13px -9px #000;
+
+  elem(title) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 1.375rem;
+  }
+}

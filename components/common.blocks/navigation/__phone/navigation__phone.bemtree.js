@@ -1,9 +1,9 @@
 block( 'navigation' ).elem( 'phone' )( {
-  replace: node => ( {
+  replace: ( { block, elem, data: { api: { settings: { tel } } }, config: { langs: [ i18n ] } } ) => ( {
     block: 'link',
     mods: { theme: 'inherit' },
-    mix: { block: node.block, elem: node.elem },
-    url: `tel:${ node.data.api.settings.tel.ru }`,
+    mix: { block, elem },
+    url: `tel:${ tel[ i18n ] }`,
     content: [
       {
         block: 'icon',
@@ -13,7 +13,7 @@ block( 'navigation' ).elem( 'phone' )( {
         },
       },
       ' ',
-      node.data.api.settings.tel.ru,
+      tel[ i18n ],
     ],
   } ),
 } );

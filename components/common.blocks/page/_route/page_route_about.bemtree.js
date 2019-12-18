@@ -1,5 +1,5 @@
 block( 'page' ).mod( 'route', 'about' )( {
-  route: ( { data: { api: { page } }, _urlFor } ) => [
+  route: ( { data: { api: { page } }, _urlFor, config: { langs: [ i18n ] } } ) => [
     {
       elem: 'section',
       elemMods: {
@@ -7,15 +7,15 @@ block( 'page' ).mod( 'route', 'about' )( {
         theme: 'dark',
       },
       back: 'index',
-      header: page.title.ru,
+      header: page.title[ i18n ],
       image: _urlFor( page.mainImage ).url(),
     },
     {
       elem: 'section',
       elemMods: { view: '2-columns' },
-      title: ( page.subTitle || {} ).ru,
-      aside: ( page.asideTitle || {} ).ru,
-      description: ( page.content || {} ).ru,
+      title: ( page.subTitle || {} )[ i18n ],
+      aside: ( page.asideTitle || {} )[ i18n ],
+      description: ( page.content || {} )[ i18n ],
     },
     {
       elem: 'section',

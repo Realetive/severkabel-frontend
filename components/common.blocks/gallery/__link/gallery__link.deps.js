@@ -1,0 +1,9 @@
+[
+  {
+    shouldDeps: [
+      {
+        block: 'link',
+      },
+    ],
+  },
+];

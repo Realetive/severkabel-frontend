@@ -5,7 +5,7 @@ block( 'page' ).mod( 'route', 'event' )( {
     let event;
 
     api.page.forEach( item => {
-      if ( item.slug.current === eventAlias ) {
+      if ( item.slug && item.slug.current === eventAlias ) {
         event = item;
       } else {
         events.push( item );
@@ -13,6 +13,7 @@ block( 'page' ).mod( 'route', 'event' )( {
     } )
 
     return [
+      { block: 'header' },
       {
         elem: 'section',
         elemMods: { view: 'event' },

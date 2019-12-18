@@ -7,7 +7,7 @@ function getLevels(platform) {
     levels = [];
 
   platformNames.forEach((name) => {
-    [ 'bem-core', 'bem-components', 'bem-forms' ].forEach( lib => {
+    [ 'bem-core', 'bem-components', 'bem-forms', 'bem-history' ].forEach( lib => {
       levels.push({ path: path.join('node_modules', lib, name + '.blocks'), check: false, });
     } );
 

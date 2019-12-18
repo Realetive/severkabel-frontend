@@ -1,5 +1,6 @@
 block( 'page' ).mod( 'route', 'thanks' )( {
   route: [
+    { block: 'header' },
     {
       elem: 'layout',
       elemMods: { width: 'tiny' },

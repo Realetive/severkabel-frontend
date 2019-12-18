@@ -1,0 +1,7 @@
+[ {
+  shouldDeps: [
+    'paragraph',
+    'list',
+    'heading',
+  ],
+} ]

@@ -1,0 +1,7 @@
+block(list).mod(view intro) {
+  elem(item) {
+    & + elem(item) {
+      margin-top: 1.5em;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../node_modules/photoswipe/dist/photoswipe.css";
+
+.pswp {
+  z-index: 9999;
+}
+
+.pswp .pswp__caption__center {
+  text-align: center;
+  max-width: 100%;
+}
+.pswp .pswp__ui--one-slide .pswp__button--arrow--left,
+.pswp .pswp__ui--one-slide .pswp__button--arrow--right,
+.pswp .pswp__ui--one-slide .pswp__counter{
+  display: block;
+}

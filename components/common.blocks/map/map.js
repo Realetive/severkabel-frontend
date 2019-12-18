@@ -20,10 +20,21 @@ modules.define( 'map', [
       },
       loaded: {
         true () {
-          const map = new this._google.maps.Map( document.getElementById( 'map' ), {
-            center: { lat: 59.9697226317877, lng: 30.258826482484075 },
-            zoom: 14,
+          const {
+            center,
+            coords,
+            zoom,
+            tooltip: {
+              title,
+              content,
+            },
+          } = this.params;
+
+          const map = new this._google.maps.Map( this.domElem[ 0 ], {
+            center: center || coords,
+            zoom,
             disableDefaultUI: true,
+            draggable: false,
             styles: [
               {
                 elementType: 'geometry',
@@ -186,7 +197,20 @@ modules.define( 'map', [
             ],
           } );
 
-          console.log( 'map', map );
+          const infowindow = new this._google.maps.InfoWindow( {
+            content: `
+              <h3>${ title }</h3>
+              <p>${ content }</p>
+            `,
+          } );
+
+          const marker = new this._google.maps.Marker( {
+            position: coords,
+            map,
+            title,
+          } );
+
+          infowindow.open( map, marker );
         },
       },
     },

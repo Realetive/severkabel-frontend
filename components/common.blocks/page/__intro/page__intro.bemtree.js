@@ -1,9 +1,9 @@
-block( 'page' ).elem( 'intro' ).content()( ( { block, data, _fromMarkdown } ) => {
+block( 'page' ).elem( 'intro' ).content()( ( { block, data, _fromMarkdown, config: { langs: [ i18n ] } } ) => {
   const promo = ( data.api.page || {} ).promo || {};
-  const title = _fromMarkdown( ( promo.promoTitle || {} ).ru );
-  const description = _fromMarkdown( ( promo.promoContent || {} ).ru );
-  const linkUrl = ( promo.promoLinkUrl || {} ).ru;
-  const linkTitle = ( promo.promoLinkTitle || {} ).ru;
+  const title = _fromMarkdown( ( promo.promoTitle || {} )[ i18n ] );
+  const description = _fromMarkdown( ( promo.promoContent || {} )[ i18n ] );
+  const linkUrl = ( promo.promoLinkUrl || {} )[ i18n ];
+  const linkTitle = ( promo.promoLinkTitle || {} )[ i18n ];
 
   return [
     {

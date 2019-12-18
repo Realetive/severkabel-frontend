@@ -1,0 +1,9 @@
+block(page).elem(section).mod(view projects) {
+  --list-view-preview-offset: -36rem;
+
+  margin-top: var(--list-view-preview-offset);
+}
+
+block(page).elem(section).mod(view header) {
+  padding-bottom: 6em;
+}

@@ -1,0 +1,67 @@
+version: '3.7'
+services:
+  base:
+    build:
+      context: .
+    tty: true
+
+  site_ru:
+    image: app_base
+    environment:
+      PORT: 3012
+      CACHE_TTL: 300000
+      LANGS: '[ "ru", "en" ]'
+    command:
+          - /bin/sh
+          - -c
+          - |
+            cd /home/node/app && npm run make && pm2-runtime ecosystem.config.js
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  site_en:
+    image: app_base
+    environment:
+      PORT: 3013
+      CACHE_TTL: 300000
+      LANGS: '[ "en", "ru" ]'
+    command:
+          - /bin/sh
+          - -c
+          - |
+            cd /home/node/app && npm run make && pm2-runtime ecosystem.config.js
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  nginx:
+    build: ./.config
+    image: umputun/nginx-le:latest
+    hostname: nginx
+    restart: unless-stopped
+    container_name: nginx
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    volumes:
+      - ./.config/etc/ssl:/etc/nginx/ssl
+      - ./.config/etc/severkabel-ru.conf:/etc/nginx/service-severkabel-ru.conf
+      - ./.config/etc/severkabel-en.conf:/etc/nginx/service-severkabel-en.conf
+      - ./static:/srv/docroot
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - TZ=Europe/Moscow
+      - LETSENCRYPT=true
+      - LE_EMAIL=tatiana@severkabel.ru
+      - LE_FQDN=severkabel.ru
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

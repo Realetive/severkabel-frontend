@@ -1,10 +1,15 @@
-[ {
-  shouldDeps: [
-    {
-      elems: [
-        'icon',
-        'slogan',
-      ],
-    },
-  ],
-} ]
+[
+  {
+    mustDeps: [
+      {
+        block: 'link',
+        mods: { theme: 'inherit' },
+      },
+    ],
+    shouldDeps: [
+      {
+        elems: [ 'icon', 'slogan' ],
+      },
+    ],
+  },
+];

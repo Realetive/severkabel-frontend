@@ -2,7 +2,7 @@ block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', '2-columns' )( {
     content: ( { block, _fromMarkdown }, { title, aside, description } ) => {
-      const desc = _fromMarkdown( description ).map( _block => ( { ..._block, content: { html: _block.content[ 0 ] } } ) );
+      const desc = _fromMarkdown( description );
 
       return [
         {

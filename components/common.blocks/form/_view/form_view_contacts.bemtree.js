@@ -164,7 +164,7 @@ block( 'form' ).mod( 'view', 'contacts' )( {
                 content: {
                   block: 'checkbox',
                   text: [
-                    'Я согласен с предосталением ',
+                    'Я согласен с предоставлением ',
                     {
                       block: 'link',
                       mods: { view: 'text' },

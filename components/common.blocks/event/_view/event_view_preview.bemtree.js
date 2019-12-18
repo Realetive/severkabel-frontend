@@ -1,5 +1,5 @@
 block( 'event' ).mod( 'view', 'preview' )( {
-  content: ( node, { event: { image, date, title, description, url } } ) => [
+  content: ( node, { event: { image, date, title, description, url, source } } ) => [
     {
       elem: 'image',
       image,
@@ -13,6 +13,7 @@ block( 'event' ).mod( 'view', 'preview' )( {
       elem: 'title',
       title,
       url,
+      source,
     },
     {
       elem: 'description',

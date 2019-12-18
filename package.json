@@ -12,7 +12,7 @@
   },
   "scripts": {
     "make": "node -r dotenv/config node_modules/enb/bin/enb make",
-    "postinstall": "npm run drop-cache && npm run make",
+    "__postinstall": "npm run drop-cache && npm run make",
     "start": "node -r dotenv/config server",
     "dev": "npm run drop-cache && npm run make && nodemon",
     "drop-cache": "rm -rf .enb/tmp",
@@ -35,11 +35,16 @@
   "dependencies": {
     "@sanity/client": "^0.141.5",
     "@sanity/image-url": "^0.140.12",
+    "akismet": "^2.0.5",
     "bem-components": "^6.0.1",
     "bem-core": "github:Realetive/bem-core#feature/#1269-partial-svg-support",
     "bem-forms": "github:realetive/bem-forms",
+    "bem-history": "^4.0.0",
     "date-fns": "^2.0.0-beta.4",
-    "nodemailer": "^6.3.0"
+    "entities": "^2.0.0",
+    "nodemailer": "^6.3.0",
+    "photoswipe": "^4.1.3",
+    "postcss-csso": "^4.0.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",
@@ -79,7 +84,7 @@
     "express": "^4.16.3",
     "express-pino-logger": "^3.0.1",
     "express-session": "^1.15.6",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.15",
     "lost": "^8.2.1",
     "markdown-bemjson": "^3.1.1",
     "mkdirp": "^0.5.1",

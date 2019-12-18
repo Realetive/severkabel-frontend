@@ -10,7 +10,10 @@
     },
     {
       block: 'list',
-      mods: { of: 'events' },
+      mods: {
+        of: 'events',
+        view: [ 'intro', 'preview' ],
+      },
     },
     {
       block: 'event',

@@ -1,22 +1,19 @@
-'use strict';
-
 const UniversalRouter = require( 'universal-router' );
 const generateUrls = require( 'universal-router/generateUrls' );
 
 const home = require( './routes/home' );
 const error = require( './routes/error' );
-const wip = require( './routes/wip' );
 const about = require( './routes/about' );
 const innovations = require( './routes/innovations' );
+const innovation = require( './routes/innovation' );
 const events = require( './routes/events' );
 const event = require( './routes/event' );
 const contacts = require( './routes/contacts' );
 const thanks = require( './routes/thanks' );
 const policy = require( './routes/policy' );
+const projects = require( './routes/projects' );
+const project = require( './routes/project' );
 
-// const projects = require( './routes/error' );
-// const project = require( './routes/error' );
-// const innovation = require( './routes/error' );
 
 const router = new UniversalRouter(
   {
@@ -34,12 +31,12 @@ const router = new UniversalRouter(
           {
             path: '',
             name: 'projects',
-            load: async () => await wip,
+            load: async () => await projects,
           },
           {
             path: '/:project',
             name: 'project',
-            load: async () => await wip,
+            load: async () => await project,
           },
         ],
       },
@@ -59,7 +56,7 @@ const router = new UniversalRouter(
           {
             path: '/:innovation',
             name: 'innovation',
-            load: async () => await wip,
+            load: async () => await innovation,
           },
         ],
       },

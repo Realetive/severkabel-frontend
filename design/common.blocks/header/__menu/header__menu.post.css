@@ -8,7 +8,7 @@ block(header).elem(menu) {
   overflow: hidden;
   transition: max-height 450ms;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     flex-direction: column;
     background-color: var(--header-background-color);
 
@@ -17,7 +17,6 @@ block(header).elem(menu) {
     padding-left: 1em;
     box-sizing: border-box;
     align-items: flex-end;
-    box-shadow: 0 6px 10px -6px #000;
   }
 
   @media (min-width: 1024px) {

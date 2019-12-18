@@ -20,6 +20,7 @@ module.exports = {
     require('postcss-preset-env')({
       stage: 2
     }),
+    require('postcss-csso')(),
     require('postcss-reporter')(),
   ],
   browserJs: require('enb-js/techs/browser-js'),

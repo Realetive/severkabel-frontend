@@ -6,9 +6,9 @@ block( 'link' )(
       if ( url === data.url.pathname ) {
         ctx.attrs = {
           'aria-current': 'location',
-        }
+        };
       } else {
-        ctx.url = url
+        ctx.url = url;
       }
     } catch ( error ) {
       console.error( error );
@@ -16,4 +16,4 @@ block( 'link' )(
 
     return applyNext();
   } )
-)
+);

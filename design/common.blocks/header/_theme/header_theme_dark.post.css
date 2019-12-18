@@ -1,4 +1,4 @@
 block(header).mod(theme dark) {
   --header-color: var(--theme-color-dark);
-  --header-background-color: hsl(205, 100%, 26%);
+  --header-background-color: transparent;
 }

@@ -10,3 +10,5 @@ bundles/*/*
 dist/
 node_modules/
 static/assets/
+
+.config/etc/ssl

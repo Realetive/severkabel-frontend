@@ -4,7 +4,7 @@ block( 'icon' ).mod( 'symbol' )( {
   content: node => ( {
     tag: 'use',
     attrs: {
-      'xlink:href': `icon_symbol.svg#icon_symbol_${ node.mods.symbol }`,
+      'xlink:href': `/icon_symbol.svg#icon_symbol_${ node.mods.symbol }`,
     },
   } ),
 } );

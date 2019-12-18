@@ -1,0 +1,5 @@
+block(project).elem(title) {
+  & + elem(description) {
+    margin-top: 1em;
+  }
+}

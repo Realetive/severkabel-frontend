@@ -4,6 +4,10 @@ const path = require( 'path' );
 const app = require( 'express' )();
 const nodemailer = require( 'nodemailer' );
 const PrettyError = require( 'pretty-error' );
+const akismet = require( 'akismet' ).client( {
+  blog: 'https://severkabel.ru',
+  apiKey: 'cae9fee89f38',
+} );
 
 const { __DEV__, port, sessionSecret, staticFolder } = require( './config.js' );
 const router = require( './router.js' );
@@ -11,6 +15,14 @@ const { render } = require( './render' );
 const rebuild = require( './rebuild' );
 
 const skip = ( _req, _res, next ) => next();
+
+akismet.verifyKey( ( err, verified ) => {
+  if ( verified ) {
+    console.log( 'API key successfully verified.' );
+  } else {
+    console.log( 'Unable to verify API key.' );
+  }
+} );
 
 /*
  * Server's middleware
@@ -39,7 +51,14 @@ app
  *
  *****************************************************************************/
 
-app.post( '*', ( { body }, res ) => {
+app.post( '/sitemap', ( { body }, res ) => {
+  console.log( 'body', body );
+  console.log( 'res', res );
+
+  return res.json( body );
+} );
+
+app.post( '*', ( { ip, protocol, hostname, originalUrl, body }, res ) => {
   const {
     name,
     phone,
@@ -48,37 +67,51 @@ app.post( '*', ( { body }, res ) => {
     agreement,
   } = body;
 
+  const akismetOptions = {
+    user_ip: ip,
+    permalink: `${ protocol }://${ hostname }${ originalUrl }`,
+    comment_author: name,
+    comment_content: message,
+  };
+
   if ( name && phone && email && message && agreement ) {
-    nodemailer.createTestAccount( () => {
-      const transporter = nodemailer.createTransport( {
-        host: 'smtp.googlemail.com',
-        port: 465,
-        secure: true,
-        auth: {
-          user: 'mail@severkabel.ru',
-          pass: 'Nvt47Xcw',
-        },
+    akismet.checkComment( akismetOptions, ( err, spam ) => {
+      if ( spam ) {
+        console.log( 'Spam caught.' );
+        return res.redirect( 302, '/' );
+      }
+      console.log( 'Not spam' );
+      nodemailer.createTestAccount( () => {
+        const transporter = nodemailer.createTransport( {
+          host: 'smtp.googlemail.com',
+          port: 465,
+          secure: true,
+          auth: {
+            user: 'mail@severkabel.ru',
+            pass: 'Nvt47Xcw',
+          },
+        } );
+
+        const mailOptions = {
+          from: '"SeverKabel" <mail@severkabel.ru>',
+          to: [ 'tatiana@severkabel.ru', 'severkabel@romanganin.ru' ],
+          subject: `${ name } / ${ phone }`,
+          replyTo: email,
+          text: `${ name } / ${ phone } : ${ message }`,
+          html: `
+              <p><b>Имя:</b> ${ name }</p>
+              <p><b>Телефон:</b> ${ phone }</p>
+              <p><b>Почта:</b> ${ email }</p>
+              <p><b>Сообщение:</b> ${ message }</p>
+            `,
+        };
+
+        transporter.sendMail( mailOptions, error => {
+          if ( error ) return console.log( error );
+        } );
+
+        return res.redirect( 302, '/thanks' );
       } );
-
-      const mailOptions = {
-        from: '"SeverKabel" <mail@severkabel.ru>',
-        to: [ 'tatiana@severkabel.ru', 'severkabel@romanganin.ru' ],
-        subject: `${ name } / ${ phone }`,
-        replyTo: email,
-        text: `${ name } / ${ phone } : ${ message }`,
-        html: `
-          <p><b>Имя:</b> ${ name }</p>
-          <p><b>Телефон:</b> ${ phone }</p>
-          <p><b>Почта:</b> ${ email }</p>
-          <p><b>Сообщение:</b> ${ message }</p>
-        `,
-      };
-
-      transporter.sendMail( mailOptions, error => {
-        if ( error ) return console.log( error );
-      } );
-
-      return res.redirect( 302, '/thanks' );
     } );
   } else {
     return res.redirect( 302, '/' );

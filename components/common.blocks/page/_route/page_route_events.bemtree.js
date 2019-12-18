@@ -1,5 +1,5 @@
 block( 'page' ).mod( 'route', 'events' )( {
-  route: ( { data: { api: { page, events } }, _urlFor } ) => [
+  route: ( { data: { api: { page, events } }, _urlFor, config: { langs: [ i18n ] } } ) => [
     {
       elem: 'section',
       elemMods: {
@@ -7,8 +7,8 @@ block( 'page' ).mod( 'route', 'events' )( {
         theme: 'dark',
       },
       back: 'index',
-      header: page.title.ru,
-      description: page.titleContent.ru,
+      header: page.title[ i18n ],
+      description: page.titleContent[ i18n ],
       image: _urlFor( page.mainImage ).url(),
     },
     {

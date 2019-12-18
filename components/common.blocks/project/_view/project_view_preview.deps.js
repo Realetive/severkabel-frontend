@@ -1,0 +1,9 @@
+[
+  {
+    shouldDeps: [
+      {
+        elems: [ 'image', 'title' ],
+      },
+    ],
+  },
+];

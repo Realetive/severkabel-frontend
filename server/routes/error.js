@@ -11,6 +11,7 @@ const api = async () => {
 }
 
 const action = async ( context, params ) => ( {
+  title: 'Что-то пошло не так… | «Северный кабель»',
   page: 'error',
   params,
   api: await api(),

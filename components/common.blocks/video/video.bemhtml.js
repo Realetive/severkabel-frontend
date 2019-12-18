@@ -1,8 +1,16 @@
 block( 'video' )( {
   tag: 'video',
 
-  addAttrs: ( node, ctx ) => ( {
-    poster: ctx.poster,
+  addAttrs: (
+    node,
+    { poster, autoplay, loop, muted, preload, playsinline }
+  ) => ( {
+    poster,
+    autoplay,
+    loop,
+    muted,
+    preload,
+    playsinline,
   } ),
 
   content: ( node, ctx ) => [

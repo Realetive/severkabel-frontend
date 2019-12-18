@@ -1,3 +1,13 @@
 block(list) {
   color: var(--list-color, inherit);
+
+  @each $size,
+    $fontSize in
+    (      xs,        s,     m,         l,       xl,     xxl),
+    ( 0.75rem, 0.875rem,  1rem,  1.125rem,  1.25rem,  1.5rem) {
+    mod(size $size) {
+      font-size: $fontSize;
+    }
+  }
+
 }

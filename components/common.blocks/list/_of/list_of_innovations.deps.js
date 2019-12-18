@@ -1,11 +1,8 @@
 [ {
   shouldDeps: [
     {
-      block: 'heading',
-      mods: { size: 'm' },
-    },
-    {
-      block: 'paragraph',
+      block: 'innovation',
+      mods: { view: 'preview' },
     },
   ],
 } ]

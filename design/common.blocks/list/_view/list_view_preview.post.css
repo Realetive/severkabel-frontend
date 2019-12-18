@@ -1,0 +1,25 @@
+block(list).mod(view preview) {
+
+  &.mod(of projects) {
+    elem(item) {
+      & + elem(item) {
+        margin-top: 2em;
+      }
+    }
+
+    @media (min-width: 961px) {
+      lost-center: 100%;
+      padding-top: calc( -1 * var(--list-view-preview-offset) );
+      padding-bottom: 4em;
+
+      elem(item) {
+        lost-column: 1/2;
+
+        &:nth-child(even) {
+          transform: translateY( var(--list-view-preview-offset) );
+        }
+      }
+    }
+  }
+
+}

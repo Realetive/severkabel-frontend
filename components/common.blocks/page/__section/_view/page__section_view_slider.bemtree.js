@@ -1,12 +1,17 @@
 block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', 'slider' )
-  .content()( node => {
-    const slides = ( ( node.data.api.page || {} ).gallery || [] ).map( slide => ( {
-      heading: slide.title.ru,
-      content: slide.description.ru,
-      url: ( slide.link || {} ).ru,
-      image: node._urlFor( slide ).url(),
+  .content()( ( { _urlFor, block, elemMods, data, config: { langs: [ i18n ] } } ) => {
+    const slides = ( ( data.api.page || {} ).gallery || [] ).map( slide => ( {
+      heading: slide.title[ i18n ],
+      content: slide.description[ i18n ],
+      url: ( slide.link || {} )[ i18n ],
+      image: _urlFor( slide )
+        .width( 520 )
+        .height( 520 )
+        .maxWidth( 520 )
+        .maxHeight( 520 )
+        .url(),
     } ) );
 
     const slide = slides[ 0 ];
@@ -22,13 +27,13 @@ block( 'page' )
             size: 'l',
             theme: 'dark',
           },
-          mix: { block: node.block, elem: 'heading', elemMods: { size: 'xxl' } },
+          mix: { block, elem: 'heading', elemMods: { size: 'xxl' } },
           content: slide.heading,
         },
       },
       {
         elem: 'slider',
-        mix: { elem: node.elemMods.layout ? 'layout' : '' },
+        mix: { elem: elemMods.layout ? 'layout' : '' },
         js: { slides },
         content: [
           {
@@ -37,12 +42,12 @@ block( 'page' )
               slide.heading && {
                 block: 'heading',
                 mods: { size: 'l' },
-                mix: { block: node.block, elem: 'title' },
+                mix: { block, elem: 'title' },
                 content: slide.heading,
               },
               slide.content && {
                 block: 'paragraph',
-                mix: { block: node.block, elem: 'description' },
+                mix: { block, elem: 'description' },
                 content: { html: slide.content },
               },
               slide.url && {
@@ -52,7 +57,7 @@ block( 'page' )
                   view: 'pseudo',
                   size: 'l',
                 },
-                mix: { block: node.block, elem: 'action' },
+                mix: { block, elem: 'action' },
                 url: slide.url,
                 text: [
                   'Подробнее ',
@@ -76,7 +81,7 @@ block( 'page' )
               {
                 block: 'pagination',
                 elem: 'navigation',
-                mix: { block: node.block, elem: 'navigation' },
+                mix: { block, elem: 'navigation' },
                 content: [
                   {
                     elem: 'link',

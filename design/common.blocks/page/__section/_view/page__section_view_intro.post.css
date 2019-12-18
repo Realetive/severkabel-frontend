@@ -1,4 +1,5 @@
-block(page).elem(section).mod(view intro) {
+block(page).elem(section).mod(view intro).mod(view intro) {
   position: relative;
   overflow: hidden;
+  background-color: #070913;
 }

@@ -1,0 +1,75 @@
+block(project).mod(view detail) {
+
+  elem(header) {
+    lost-center: 100%;
+    margin-bottom: 5em;
+    position: relative;
+
+    elem(main) {
+      @media (min-width: 1024px) {
+        lost-column: 1/4;
+        padding-top: 10em;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (min-width: 1440px) {
+        padding-top: 20em;
+      }
+    }
+
+    elem(aside) {
+      @media (min-width: 1024px) {
+        lost-column: 3/4;
+      }
+    }
+  }
+
+  elem(back) {
+    width: 9em;
+    padding-top: 1em;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+  }
+
+  elem(title) {
+    position: relative;
+    margin-bottom: 1em;
+
+    @media (min-width: 1024px) {
+      min-width: 640px;
+      margin-bottom: 4em;
+    }
+
+    @media (min-width: 1440px) {
+      margin-bottom: 5em;
+    }
+  }
+
+  elem(indicator) {
+    position: relative;
+    left: -0.5em;
+  }
+
+  elem(section) {
+    lost-center: 100%;
+
+    elem(main) {
+      padding-bottom: 2em;
+
+      @media (min-width: 1024px) {
+        lost-column: 3/4;
+        columns: 2;
+      }
+    }
+
+    elem(aside) {
+      color: #004e87;
+      font-weight: 600;
+
+      @media (min-width: 1024px) {
+        lost-column: 1/4;
+      }
+    }
+  }
+}

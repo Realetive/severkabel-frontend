@@ -3,6 +3,10 @@ block(list).mod(of letters) {
   flex-wrap: nowrap;
   overflow: visible;
 
+  @media (min-width: 1024px) {
+    color: #000;
+  }
+
   elem(item) {
     lost-column: 1/1 0 60px;
 
@@ -16,19 +20,4 @@ block(list).mod(of letters) {
     }
   }
 
-  elem(image) {
-    width: 100%;
-    height: 0;
-    padding-top: 141.42%;
-    border: 1em solid #c7e5fc;
-    box-sizing: border-box;
-    background-size: cover;
-    background-origin: content-box;
-  }
-
-  elem(description) {
-    @media (min-width: 1024px) {
-      color: #000;
-    }
-  }
 }

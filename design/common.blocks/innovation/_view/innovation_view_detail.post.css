@@ -1,0 +1,53 @@
+block(innovation).mod(view detail) {
+  elem(header) {
+    lost-center: 100%;
+    margin-bottom: 5em;
+    position: relative;
+
+    elem(main) {
+
+      @media (min-width: 1024px) {
+        lost-column: 1/4;
+        padding-top: 20em;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    elem(aside) {
+      @media (min-width: 1024px) {
+        lost-column: 3/4;
+      }
+    }
+  }
+
+  elem(back) {
+    width: 9em;
+    padding-top: 1em;
+    box-sizing: border-box;
+  }
+
+  elem(section) {
+    lost-center: 100%;
+
+    elem(main) {
+      padding-bottom: 2em;
+
+      @media (min-width: 1024px) {
+        lost-column: 3/4;
+        columns: 2;
+      }
+    }
+
+    elem(aside) {
+
+      @media (min-width: 1024px) {
+        lost-column: 1/4;
+      }
+    }
+  }
+
+  elem(partners) {
+    margin-top: 2em;
+  }
+}
