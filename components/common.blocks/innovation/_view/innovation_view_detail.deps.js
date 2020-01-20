@@ -8,7 +8,7 @@
     },
     {
       block: 'list',
-      mods: { type: 'circle' },
+      mods: { type: [ 'circle', 'numeric' ] },
     },
   ],
 } ]
