@@ -95,87 +95,28 @@ block( 'root' ).replace()( ( node, ctx ) => {
     styles: { elem: 'css', url: `/assets/css/${ data.page }-${ level }.min.css` },
     scripts: { elem: 'js', url: `/assets/js/${ data.page }-${ level }.min.js` },
     head: [
-      {
-        elem: 'meta',
-        attrs: {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1',
-        },
-      },
+      { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
 
       // favicons
-      {
-        elem: 'link',
-        attrs: {
-          rel: 'apple-touch-icon',
-          sizes: '180x180',
-          href: '/apple-touch-icon.png',
-        },
-      },
-      {
-        elem: 'link',
-        attrs: {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
-          href: '/favicon-32x32.png',
-        },
-      },
-      {
-        elem: 'link',
-        attrs: {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '/favicon-16x16.png',
-        },
-      },
+      { elem: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' } },
+      { elem: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' } },
+      { elem: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' } },
       { elem: 'link', attrs: { rel: 'manifest', href: '/site.webmanifest' } },
-      {
-        elem: 'link',
-        attrs: {
-          rel: 'mask-icon',
-          href: '/safari-pinned-tab.svg',
-          color: '#5bbad5',
-        },
-      },
-      {
-        elem: 'meta',
-        attrs: { name: 'msapplication-TileColor', content: '#ffffff' },
-      },
+      { elem: 'link', attrs: { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' } },
+      { elem: 'meta', attrs: { name: 'msapplication-TileColor', content: '#ffffff' } },
       { elem: 'meta', attrs: { name: 'theme-color', content: '#ffffff' } },
 
       // meta
-      {
-        elem: 'meta',
-        attrs: { name: 'apple-mobile-web-app-title', content: config.appName },
-      },
-      {
-        elem: 'meta',
-        attrs: { name: 'application-name', content: config.appName },
-      },
-      {
-        elem: 'meta',
-        attrs: { name: 'description', content: meta.description },
-      },
-      {
-        elem: 'meta',
-        attrs: {
-          property: 'og:title',
-          content: og.title || data.title || config.appName,
-        },
-      },
-      {
-        elem: 'meta',
-        attrs: { property: 'og:url', content: og.url || data.url.pathname },
-      },
+      { elem: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: config.appName } },
+      { elem: 'meta', attrs: { name: 'application-name', content: config.appName } },
+      { elem: 'meta', attrs: { name: 'description', content: meta.description } },
+      { elem: 'meta', attrs: { property: 'og:title', content: og.title || data.title || config.appName } },
+      { elem: 'meta', attrs: { property: 'og:url', content: og.url || data.url.pathname } },
       { elem: 'meta', attrs: { property: 'og:image', content: og.image } },
-      {
-        elem: 'meta',
-        attrs: { property: 'og:site_name', content: config.appName },
-      },
+      { elem: 'meta', attrs: { property: 'og:site_name', content: config.appName } },
       { elem: 'meta', attrs: { property: 'og:locale', content: config.langs[ 0 ] === 'ru' ? 'ru_RU' : 'en_US' } },
       { elem: 'meta', attrs: { property: 'og:type', content: 'website' } },
+      meta.noIndex && { elem: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } },
       { html: data.api.settings.counter[ config.langs[ 0 ] ] }, // counters
     ],
     mods: { route: data.view || data.page },

@@ -21,6 +21,7 @@ const action = async ( context, params ) => {
   return {
     title: `Письмо успешно отправлено | «${ projectName[ lang ] }»`,
     page: 'thanks',
+    meta: { noIndex: true },
     params,
     api: _api,
   }
