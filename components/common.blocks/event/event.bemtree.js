@@ -40,7 +40,16 @@ block( 'event' )( {
    *
    * @returns {Node} node
    */
-  extend: ( { _fromMarkdown, _urlFor, config: { langs: [ i18n ] } }, { event } ) => ( {
+  extend: (
+    {
+      _fromMarkdown,
+      _urlFor,
+      config: {
+        langs: [ i18n ],
+      },
+    },
+    { event }
+  ) => ( {
     'ctx.event': event
       ? {
         image: _urlFor( event.mainImage )
@@ -57,6 +66,7 @@ block( 'event' )( {
           .height( 35 )
           .maxHeight( 35 )
           .url(),
+        gallery: event.gallery,
       }
       : {},
   } ),

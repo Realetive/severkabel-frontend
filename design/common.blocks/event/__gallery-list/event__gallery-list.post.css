@@ -1,0 +1,17 @@
+block(event).elem(gallery-list) {
+  overflow: scroll;
+  white-space: nowrap;
+  padding: .2em;
+  box-sizing: border-box;
+
+  &:focus-within .elem(gallery-item) {
+    .mod(selected) {
+      opacity: .6;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+block(event).elem(gallery-item) {
+  box-shadow: 0px 6px 6px -3px #000;
+  opacity: .6;
+
+  .mod(selected),
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  & + & {
+    margin-left: 1em;
+  }
+}

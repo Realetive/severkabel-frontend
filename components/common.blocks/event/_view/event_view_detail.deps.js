@@ -3,7 +3,7 @@
     {
       elems: [
         'back',
-        'image',
+        'gallery',
         'title',
         'content',
       ],

@@ -1,12 +1,33 @@
-block( 'event' ).mod( 'view', 'detail' )( {
-  content: ( node, { event: { image, title, content }, events } ) => [
+block( 'event' ).mod(
+  'view',
+  'detail'
+)( {
+  content: ( node, { event: { gallery, title, content, subTitle }, events } ) => [
     {
       elem: 'header',
       content: [
-        { elem: 'back' },
         {
-          elem: 'image',
-          image,
+          elem: 'main',
+          content: [
+            { elem: 'back' },
+            {
+              elem: 'title',
+              title,
+            },
+            subTitle && {
+              elem: 'subtitle',
+              subTitle,
+            },
+          ],
+        },
+        {
+          elem: 'aside',
+          content: [
+            gallery && {
+              elem: 'gallery',
+              gallery,
+            },
+          ],
         },
       ],
     },
@@ -26,8 +47,12 @@ block( 'event' ).mod( 'view', 'detail' )( {
           of: 'events',
           view: 'intro',
         },
-        events,
+        events: events.sort(
+          ( a, b ) =>
+            new Date( b.publishedAt || b._createdAt ) -
+              new Date( a.publishedAt || a._createdAt )
+        ),
       },
     },
   ],
-} )
+} );

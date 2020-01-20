@@ -2,11 +2,27 @@ block(event).mod(view detail) {
   lost-center: 100%;
 
   elem(header) {
-    lost-column: 1/1 1 0px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    lost-center: 100%;
     margin-bottom: 5em;
+    position: relative;
+
+    elem(main) {
+
+      @media (min-width: 1024px) {
+        lost-column: 1/4;
+        padding-top: 20em;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    elem(aside) {
+      background-color: transparent;
+
+      @media (min-width: 1024px) {
+        lost-column: 3/4;
+      }
+    }
   }
 
   elem(back) {
