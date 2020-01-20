@@ -2,7 +2,11 @@ block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', 'events' )
   .content()( ( node, { events, limit = 1, hasLinkToAllEvents = true } ) => {
-    const firstEvents = events.splice( 0, limit );
+    const firstEvents = events
+      .sort(
+        ( a, b ) => new Date( b.publishedAt || b._createdAt ) - new Date( a.publishedAt || a._createdAt )
+      )
+      .splice( 0, limit );
 
     return [
       {
