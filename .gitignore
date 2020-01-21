@@ -16,3 +16,5 @@ bundles/*/*
 dist/
 
 static/assets/
+
+.config/etc/ssl
