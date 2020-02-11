@@ -1,39 +1,37 @@
 version: '3.7'
+
+x-project: &function
+  image: app_base:latest
+  environment:
+    CACHE_TTL: 300000
+  command:
+    - /bin/sh
+    - -c
+    - |
+      cd /home/node/app && \
+      npm run make && \
+      pm2-runtime ecosystem.config.js
+  tty: true
+  restart: unless-stopped
+  networks:
+    - app-network
+
 services:
   base:
     build:
       context: .
+    image: app_base:latest
     tty: true
 
   site_ru:
-    image: app_base
+    <<: *function
     environment:
-      PORT: 3012
-      CACHE_TTL: 300000
       LANGS: '[ "ru", "en" ]'
-    command:
-          - /bin/sh
-          - -c
-          - |
-            cd /home/node/app && npm run make && pm2-runtime ecosystem.config.js
-    restart: unless-stopped
-    networks:
-      - app-network
 
   site_en:
-    image: app_base
+    <<: *function
     environment:
-      PORT: 3013
-      CACHE_TTL: 300000
       LANGS: '[ "en", "ru" ]'
-    command:
-          - /bin/sh
-          - -c
-          - |
-            cd /home/node/app && npm run make && pm2-runtime ecosystem.config.js
-    restart: unless-stopped
-    networks:
-      - app-network
 
   nginx:
     build: ./.config
@@ -58,7 +56,7 @@ services:
       - TZ=Europe/Moscow
       - LETSENCRYPT=true
       - LE_EMAIL=tatiana@severkabel.ru
-      - LE_FQDN=severkabel.ru
+      - LE_FQDN=severkabel.ru,en.severkabel.ru
     networks:
       - app-network
 
