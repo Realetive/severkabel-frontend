@@ -9,7 +9,7 @@ const akismet = require( 'akismet' ).client( {
   apiKey: 'cae9fee89f38',
 } );
 
-const { __DEV__, port, sessionSecret, staticFolder } = require( './config.js' );
+const { __DEV__, port, staticFolder } = require( './config.js' );
 const router = require( './router.js' );
 const { render } = require( './render' );
 const rebuild = require( './rebuild' );
@@ -32,18 +32,10 @@ app
   .disable( 'x-powered-by' )
   .enable( 'trust proxy' )
   .use( require( 'compression' )() ) // TODO: Add Brotli / Zopfli compression #2
-  // .use( __DEV__ ? require( 'tiny-lr' ).middleware( { app, dashboard: true } ) : skip )
+  .use( __DEV__ ? require( 'tiny-lr' ).middleware( { app, dashboard: true } ) : skip )
   .use( require( 'serve-favicon' )( path.join( staticFolder, 'favicon.ico' ) ) )
   .use( require( 'serve-static' )( staticFolder ) )
-  .use( require( 'cookie-parser' )() )
   .use( require( 'body-parser' ).urlencoded( { extended: true } ) )
-  .use(
-    require( 'express-session' )( {
-      resave: true,
-      saveUninitialized: true,
-      secret: sessionSecret,
-    } )
-  )
   .use( __DEV__ ? skip : require( 'connect-slashes' )() );
 
 /*

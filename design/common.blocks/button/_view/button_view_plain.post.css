@@ -2,4 +2,8 @@ block(button).mod(view plain) {
   padding: 0;
   box-shadow: none;
   text-decoration: none;
+
+  elem(text) {
+    padding: 0;
+  }
 }

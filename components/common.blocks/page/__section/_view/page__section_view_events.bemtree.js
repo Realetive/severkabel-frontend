@@ -20,7 +20,7 @@ block( 'page' )
             theme: 'dark',
           },
           mix: { block: node.block, elem: 'heading', elemMods: { size: 'xxl' } },
-          content: 'События',
+          content: node.config.langs[ 0 ] === 'en' ? 'Events' : 'События',
         },
       },
       {
@@ -35,7 +35,7 @@ block( 'page' )
               size: 'm',
             },
             mix: { block: node.block, elem: 'heading' },
-            content: 'События',
+            content: node.config.langs[ 0 ] === 'en' ? 'Events' : 'События',
           },
           {
             block: 'list',
@@ -62,7 +62,7 @@ block( 'page' )
                 mix: { block: node.block, elem: 'all-events' },
                 to: 'events',
                 content: [
-                  'Все события ',
+                  node.config.langs[ 0 ] === 'en' ? 'All events' : 'Все события ',
                   {
                     block: 'icon',
                     mods: { symbol: 'arrow-right' },

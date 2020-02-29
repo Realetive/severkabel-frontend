@@ -60,7 +60,9 @@ block( 'page' )
                 mix: { block, elem: 'action' },
                 url: slide.url,
                 text: [
-                  'Подробнее ',
+                  i18n === 'en'
+                    ? 'More '
+                    : 'Подробнее ',
                   {
                     block: 'icon',
                     mods: { symbol: 'arrow-right' },

@@ -34,7 +34,8 @@ USER node
 
 COPY --chown=node:node . .
 
-RUN npm install -g pm2 && npm install --ignore-scripts
+RUN npm install -g pm2
+RUN npm install --ignore-scripts
 
 EXPOSE 3012
 

@@ -1,5 +1,16 @@
-block( 'page' ).mod( 'route', 'innovations' )( {
-  route: ( { data: { api: { page } }, _urlFor, config: { langs: [ i18n ] } } ) => [
+block( 'page' ).mod(
+  'route',
+  'innovations'
+)( {
+  route: ( {
+    data: {
+      api: { page },
+    },
+    _urlFor,
+    config: {
+      langs: [ i18n ],
+    },
+  } ) => [
     {
       elem: 'section',
       elemMods: {
@@ -35,7 +46,10 @@ block( 'page' ).mod( 'route', 'innovations' )( {
           block: 'heading',
           mods: { size: 'l' },
           mix: { block, elem: 'heading', elemMods: { size: 'xl' } },
-          content: 'Инновационные решения',
+          content:
+            i18n === 'en'
+              ? 'Innovative solutions'
+              : 'Инновационные решения',
         },
       },
     },
@@ -45,5 +59,5 @@ block( 'page' ).mod( 'route', 'innovations' )( {
       innovations: page.innovations,
     },
   ],
-} )
+} );
 

@@ -1,4 +1,7 @@
-block( 'form' ).mod( 'view', 'contacts' )( {
+block( 'form' ).mod(
+  'view',
+  'contacts'
+)( {
   extend: {
     'ctx.directions': [ 'bottom-center' ],
     'ctx.method': 'POST',
@@ -45,13 +48,20 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
-            js: { required: { message: 'Это поле обязательно' } },
+            js: {
+              required: {
+                message:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'This field is required'
+                    : 'Это поле обязательно',
+              },
+            },
             directions: [ 'bottom-left' ],
             name: 'name',
             content: [
               {
                 elem: 'label',
-                content: 'Имя',
+                content: node.config.langs[ 0 ] === 'en' ? 'Name' : 'Имя',
               },
               {
                 elem: 'control',
@@ -72,13 +82,23 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
-            js: { required: { message: 'Это поле обязательно' } },
+            js: {
+              required: {
+                message:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'This field is required'
+                    : 'Это поле обязательно',
+              },
+            },
             directions: [ 'bottom-left' ],
             name: 'phone',
             content: [
               {
                 elem: 'label',
-                content: 'Номер телефона',
+                content:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'Phone number'
+                    : 'Номер телефона',
               },
               {
                 elem: 'control',
@@ -100,13 +120,20 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
-            js: { required: { message: 'Это поле обязательно' } },
+            js: {
+              required: {
+                message:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'This field is required'
+                    : 'Это поле обязательно',
+              },
+            },
             directions: [ 'bottom-left' ],
             name: 'email',
             content: [
               {
                 elem: 'label',
-                content: 'Почта',
+                content: node.config.langs[ 0 ] === 'en' ? 'Email' : 'Почта',
               },
               {
                 elem: 'control',
@@ -127,13 +154,23 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
-            js: { required: { message: 'Это поле обязательно' } },
+            js: {
+              required: {
+                message:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'This field is required'
+                    : 'Это поле обязательно',
+              },
+            },
             directions: [ 'bottom-left' ],
             name: 'message',
             content: [
               {
                 elem: 'label',
-                content: 'Ваше сообщение',
+                content:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'Yor message'
+                    : 'Ваше сообщение',
               },
               {
                 elem: 'control',
@@ -155,7 +192,14 @@ block( 'form' ).mod( 'view', 'contacts' )( {
               required: true,
               message: 'popup',
             },
-            js: { required: { message: 'Это поле обязательно' } },
+            js: {
+              required: {
+                message:
+                  node.config.langs[ 0 ] === 'en'
+                    ? 'This field is required'
+                    : 'Это поле обязательно',
+              },
+            },
             directions: [ 'bottom-left' ],
             name: 'agreement',
             content: [
@@ -164,13 +208,18 @@ block( 'form' ).mod( 'view', 'contacts' )( {
                 content: {
                   block: 'checkbox',
                   text: [
-                    'Я согласен с предоставлением ',
+                    node.config.langs[ 0 ] === 'en'
+                      ? 'I agree with '
+                      : 'Я согласен с предоставлением ',
                     {
                       block: 'link',
                       mods: { view: 'text' },
                       url: '/policy',
                       target: '_blank',
-                      content: 'персональных данных',
+                      content:
+                        node.config.langs[ 0 ] === 'en'
+                          ? 'privacy policy'
+                          : 'персональных данных',
                     },
                   ],
                 },
@@ -189,7 +238,9 @@ block( 'form' ).mod( 'view', 'contacts' )( {
           view: 'action',
         },
         text: [
-          'Отправить ',
+          node.config.langs[ 0 ] === 'en'
+            ? 'Submit '
+            : 'Отправить ',
           {
             block: 'icon',
             mods: { symbol: 'arrow-right' },

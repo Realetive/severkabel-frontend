@@ -2,7 +2,7 @@ block( 'event' ).mod(
   'view',
   'detail'
 )( {
-  content: ( node, { event: { gallery, title, content, subTitle }, events } ) => [
+  content: ( node, { event: { gallery, title, content, subTitle, image }, events } ) => [
     {
       elem: 'header',
       content: [
@@ -23,17 +23,18 @@ block( 'event' ).mod(
         {
           elem: 'aside',
           content: [
-            gallery && {
-              elem: 'gallery',
-              gallery,
-            },
+            gallery
+              ? {
+                elem: 'gallery',
+                gallery,
+              }
+              : {
+                elem: 'image',
+                image,
+              },
           ],
         },
       ],
-    },
-    {
-      elem: 'title',
-      title,
     },
     {
       elem: 'content',

@@ -117,7 +117,7 @@ block( 'root' ).replace()( ( node, ctx ) => {
       { elem: 'meta', attrs: { property: 'og:locale', content: config.langs[ 0 ] === 'ru' ? 'ru_RU' : 'en_US' } },
       { elem: 'meta', attrs: { property: 'og:type', content: 'website' } },
       meta.noIndex && { elem: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } },
-      { html: data.api.settings.counter[ config.langs[ 0 ] ] }, // counters
+      { html: data.api.settings.counter[ config.langs[ 0 ] ] || '' }, // counters
     ],
     mods: { route: data.view || data.page },
   };

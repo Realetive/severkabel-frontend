@@ -1,10 +1,26 @@
 block( 'page' )
   .elem( 'section' )
-  .elemMod( 'view', 'contacts' )( {
-    extend: ( { data: { api: { page } }, _urlFor } ) => ( {
+  .elemMod(
+    'view',
+    'contacts'
+  )( {
+    extend: ( {
+      data: {
+        api: { page },
+      },
+      _urlFor,
+    } ) => ( {
       'ctx.image': _urlFor( page.mainImage ).url(),
     } ),
-    content: ( { block, data: { api: { page } }, config: { langs: [ i18n ] } } ) => [
+    content: ( {
+      block,
+      data: {
+        api: { page },
+      },
+      config: {
+        langs: [ i18n ],
+      },
+    } ) => [
       {
         block: 'map',
         attrs: { id: 'map' },
@@ -35,8 +51,8 @@ block( 'page' )
                 block: 'form',
                 mods: { view: 'contacts' },
                 mix: { block, elem: 'form' },
-                heading: 'Контакты',
-                subheading: 'Напишите нам',
+                heading: i18n === 'en' ? 'Contacts' : 'Контакты',
+                subheading: i18n === 'en' ? 'Write to us' : 'Напишите нам',
               },
               {
                 elem: 'contacts',
@@ -44,8 +60,8 @@ block( 'page' )
                   block: 'list',
                   mods: { of: 'contacts' },
                   contacts: [
-                    { term: 'Режим работы', definition: page.hours[ i18n ] },
-                    { term: 'Адрес', definition: page.address[ i18n ] },
+                    { term: i18n === 'en' ? 'Working time' : 'Режим работы', definition: page.hours[ i18n ] },
+                    { term: i18n === 'en' ? 'Address' : 'Адрес', definition: page.address[ i18n ] },
                   ],
                 },
               },
