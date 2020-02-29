@@ -3,11 +3,14 @@ block(event).mod(view detail) {
 
   elem(header) {
     lost-center: 100%;
-    margin-bottom: 5em;
     position: relative;
+    margin-bottom: 1em;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 5em;
+    }
 
     elem(main) {
-
       @media (min-width: 1024px) {
         lost-column: 1/4;
         padding-top: 20em;
@@ -37,18 +40,29 @@ block(event).mod(view detail) {
 
   elem(title) {
     lost-column: 1/1 1 0px;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 4em;
+    }
   }
 
   elem(content) {
-    lost-column: 3/5 0 0px;
     padding-bottom: 2em;
+
+    @media (min-width: 1024px) {
+      lost-column: 3/5 0 0px;
+    }
   }
 
   elem(aside) {
-    lost-column: 2/5 1 30px;
     background-color: hsl(0, 0%, 90%);
-    padding: 30px 50px;
     box-sizing: border-box;
+    padding: 10px 20px;
+
+    @media (min-width: 1024px) {
+      padding: 30px 50px;
+      lost-column: 2/5 1 30px;
+    }
   }
 }
