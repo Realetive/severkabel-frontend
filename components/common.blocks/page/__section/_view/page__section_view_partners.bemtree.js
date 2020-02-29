@@ -15,13 +15,15 @@ block( 'page' )
                 capitel: true,
                 size: 'm',
               },
-              content: 'Клиенты',
+              content: node.config.langs[ 0 ] === 'en' ? 'Clients' : 'Клиенты',
             },
             {
               block: 'link',
               url: '/about#letters',
               content: [
-                'Отзывы и благодарности ',
+                node.config.langs[ 0 ] === 'en'
+                  ? 'Feedback and thanks '
+                  : 'Отзывы и благодарности ',
                 {
                   block: 'icon',
                   mods: { symbol: 'arrow-right' },

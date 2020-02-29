@@ -13,7 +13,6 @@ block( 'logo' )(
       block: 'link',
       mods: { theme: 'inherit' },
       mix,
-      zzz: 123,
       to: 'index',
       content: ctx,
     }

@@ -1,5 +1,11 @@
-block( 'innovation' ).mod( 'view', 'detail' )( {
-  content: ( node, { innovation: { title, subTitle, content, gallery, partners = [] } } ) => [
+block( 'innovation' ).mod(
+  'view',
+  'detail'
+)( {
+  content: (
+    node,
+    { innovation: { title, subTitle, content, gallery, partners = [] } }
+  ) => [
     {
       elem: 'header',
       content: [
@@ -33,7 +39,10 @@ block( 'innovation' ).mod( 'view', 'detail' )( {
       content: [
         {
           elem: 'aside',
-          content: 'Описание',
+          content:
+            node.config.langs[ 0 ] === 'en'
+              ? 'Description'
+              : 'Описание',
         },
         {
           elem: 'main',
@@ -46,9 +55,11 @@ block( 'innovation' ).mod( 'view', 'detail' )( {
         },
       ],
     },
-    partners.length ? {
-      elem: 'partners',
-      partners,
-    } : '',
+    partners.length
+      ? {
+        elem: 'partners',
+        partners,
+      }
+      : '',
   ],
 } );

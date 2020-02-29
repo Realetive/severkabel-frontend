@@ -1,5 +1,5 @@
 block( 'event' ).elem( 'back' )( {
-  content: {
+  content: ( { config: { langs: [ lang ] } } ) => ( {
     block: 'link',
     to: 'events',
     content: [
@@ -7,7 +7,7 @@ block( 'event' ).elem( 'back' )( {
       //   block: 'icon',
       //   mods: { symbol: 'arrow-left' },
       // },
-      'Все события',
+      lang === 'en' ? 'All events' : 'Все события',
     ],
-  },
+  } ),
 } );

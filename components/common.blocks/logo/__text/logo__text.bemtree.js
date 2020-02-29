@@ -1,3 +1,3 @@
 block( 'logo' )
   .elem( 'text' )
-  .content()( 'Северный Кабель' );
+  .content()( ( { data: { api }, config: { langs: [ lang ] } } ) => api.settings.title[ lang ] );
