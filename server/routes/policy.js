@@ -19,7 +19,11 @@ const action = async ( context, params ) => {
   } = _api;
 
   return {
-    title: `Согласие на обработку персональных данных | «${ projectName[ lang ] }»`,
+    title: `${
+      lang === 'en'
+        ? 'Personal Data Processing Consent'
+        : 'Согласие на обработку персональных данных'
+    } | «${ projectName[ lang ] }»`,
     page: 'policy',
     params,
     api: _api,

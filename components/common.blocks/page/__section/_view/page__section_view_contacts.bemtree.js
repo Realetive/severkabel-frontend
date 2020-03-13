@@ -52,7 +52,7 @@ block( 'page' )
                 mods: { view: 'contacts' },
                 mix: { block, elem: 'form' },
                 heading: i18n === 'en' ? 'Contacts' : 'Контакты',
-                subheading: i18n === 'en' ? 'Write to us' : 'Напишите нам',
+                subheading: i18n === 'en' ? 'Contact us' : 'Напишите нам',
               },
               {
                 elem: 'contacts',

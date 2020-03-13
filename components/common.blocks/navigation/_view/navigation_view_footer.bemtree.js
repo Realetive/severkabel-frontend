@@ -15,7 +15,7 @@ block( 'navigation' )
         { val: 'about', content: lang === 'en' ? 'About' : 'О компании' },
         {
           val: 'innovations',
-          content: lang === 'en' ? 'Innovations' : 'Инновации',
+          content: lang === 'en' ? 'Innovation' : 'Инновации',
         },
         { val: 'events', content: lang === 'en' ? 'Events' : 'События' },
         { val: 'contacts', content: lang === 'en' ? 'Contacts' : 'Контакты' },
