@@ -4,4 +4,5 @@ block(logo) {
   flex-direction: row;
   user-select: none;
   font-size: 1.25rem;
+  align-items: center;
 }
