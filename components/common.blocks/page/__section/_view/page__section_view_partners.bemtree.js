@@ -15,7 +15,7 @@ block( 'page' )
                 capitel: true,
                 size: 'm',
               },
-              content: node.config.langs[ 0 ] === 'en' ? 'Clients' : 'Клиенты',
+              content: node.config.langs[ 0 ] === 'en' ? 'Customers' : 'Клиенты',
             },
             {
               block: 'link',

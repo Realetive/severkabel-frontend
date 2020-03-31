@@ -10,7 +10,7 @@ block( 'navigation' )
       val: params._name,
       content: [
       // { val: 'projects', content: lang === 'en' ? 'Projects' : 'Проекты' },
-        { val: 'about', content: lang === 'en' ? 'About' : 'О компании' },
+        { val: 'about', content: lang === 'en' ? 'About us' : 'О компании' },
         {
           val: 'innovations',
           content: lang === 'en' ? 'Innovation' : 'Инновации',

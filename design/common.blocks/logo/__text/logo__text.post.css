@@ -4,4 +4,9 @@ block(logo).elem(text) {
   font-variant: small-caps;
   font-feature-settings: 'smcp';
   margin-left: 10px;
+  height: 1em;
+
+  svg {
+    height: 100%;
+  }
 }

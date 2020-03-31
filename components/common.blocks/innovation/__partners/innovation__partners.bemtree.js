@@ -1,12 +1,12 @@
 block( 'innovation' ).elem( 'partners' )( {
-  content: ( { _urlFor, config: { langs: [ i18n ] } }, { partners } ) => [
+  content: ( { _urlFor, config: { langs: [ lang ] } }, { partners } ) => [
     {
       block: 'heading',
       mods: {
         capitel: true,
         size: 'm',
       },
-      content: 'Партнёры',
+      content: lang === 'en' ? 'Partners' : 'Партнёры',
     },
     {
       block: 'list',
@@ -17,7 +17,7 @@ block( 'innovation' ).elem( 'partners' )( {
       items: ( partners || [] ).map( image => ( {
         block: 'image',
         mods: { width: 'available' },
-        alt: ( image.title || {} )[ i18n ] || '',
+        alt: ( image.title || {} )[ lang ] || '',
         url: _urlFor( image ).url(),
       } ) ),
     },
