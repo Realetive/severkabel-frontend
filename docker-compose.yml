@@ -1,7 +1,9 @@
 version: '3.7'
 
 x-project: &function
-  image: app_base:latest
+  image: frontend:latest
+  env_file:
+    - .env
   environment:
     CACHE_TTL: 300000
   command:
@@ -17,12 +19,6 @@ x-project: &function
     - app-network
 
 services:
-  base:
-    build:
-      context: .
-    image: app_base:latest
-    tty: true
-
   site_ru:
     <<: *function
     environment:
