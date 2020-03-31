@@ -5,6 +5,7 @@ block(logo).elem(text) {
   font-feature-settings: 'smcp';
   margin-left: 10px;
   height: 1em;
+  display: flex;
 
   svg {
     height: 100%;
