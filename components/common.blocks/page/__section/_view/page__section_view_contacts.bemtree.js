@@ -36,8 +36,12 @@ block( 'page' )
           },
           zoom: 14,
           tooltip: {
-            title: 'Санкт-Петербург',
-            content: '199004, Россия, Санкт-Петербург, Кожевная линия, 40',
+            title: i18n === 'en'
+              ? 'Saint Petersburg'
+              : 'Санкт-Петербург',
+            content: i18n === 'en'
+              ? '199004, Russia, St. Petersburg, Kozhevnaya line, 40'
+              : '199004, Россия, Санкт-Петербург, Кожевная линия, 40',
           },
         },
       },

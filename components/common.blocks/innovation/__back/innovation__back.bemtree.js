@@ -1,9 +1,13 @@
 block( 'innovation' ).elem( 'back' )( {
-  content: {
+  content: ( { config: { langs: [ lang ] } } ) => ( {
     block: 'link',
     to: 'innovations',
     content: [
-      'Все инновации',
+      {
+        block: 'icon',
+        mods: { symbol: 'arrow-left' },
+      },
+      lang === 'en' ? ' All innovations' : ' Все инновации',
     ],
-  },
+  } ),
 } );
