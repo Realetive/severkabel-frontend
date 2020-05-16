@@ -4,6 +4,7 @@ block(page).elem(intro) {
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  color: #fff;
 
   elem(intro-heading) {
     margin-bottom: 1em;

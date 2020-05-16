@@ -15,3 +15,13 @@ block(paragraph) {
     margin-top: 1em;
   }
 }
+
+p {
+  color: var(--paragraph-color, inherit);
+  margin: 0;
+  font: inherit;
+
+  & + & {
+    margin-top: 1em;
+  }
+}

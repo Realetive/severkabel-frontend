@@ -17,6 +17,7 @@ block( 'navigation' )
         },
         { val: 'events', content: lang === 'en' ? 'Events' : 'События' },
         { val: 'contacts', content: lang === 'en' ? 'Contacts' : 'Контакты' },
+        { val: 'lang', content: lang === 'en' ? '🇷🇺' : '🇬🇧' },
       ].map( ( { val, content } ) => ( {
         elem: 'item',
         elemMods: params._name === val ? {} : { type: 'link' },

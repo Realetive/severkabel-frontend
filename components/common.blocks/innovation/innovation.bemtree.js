@@ -2,7 +2,7 @@ block( 'innovation' )( {
   extend: (
     {
       _urlFor,
-      _fromMarkdown,
+      _blocksToHtml,
       _,
       config: {
         langs: [ i18n ],
@@ -24,7 +24,7 @@ block( 'innovation' )( {
       url: _.get( slug, 'current' ),
       title: _.get( title, i18n ),
       subTitle: _.get( subTitle, i18n ),
-      content: content && _fromMarkdown( _.get( content, i18n ) ),
+      content: content && content[ i18n ] && _blocksToHtml( content[ i18n ] ),
       image:
         mainImage &&
         _urlFor( mainImage )

@@ -1,7 +1,7 @@
-block( 'page' ).elem( 'intro' ).content()( ( { block, data, _fromMarkdown, config: { langs: [ i18n ] } } ) => {
+block( 'page' ).elem( 'intro' ).content()( ( { block, data, _blocksToHtml, config: { langs: [ i18n ] } } ) => {
   const promo = ( data.api.page || {} ).promo || {};
-  const title = _fromMarkdown( ( promo.promoTitle || {} )[ i18n ] );
-  const description = _fromMarkdown( ( promo.promoContent || {} )[ i18n ] );
+  const title = _blocksToHtml( ( promo.promoTitle || {} )[ i18n ] );
+  const description = _blocksToHtml( ( promo.promoContent || {} )[ i18n ] );
   const linkUrl = ( promo.promoLinkUrl || {} )[ i18n ];
   const linkTitle = ( promo.promoLinkTitle || {} )[ i18n ];
 
@@ -10,12 +10,12 @@ block( 'page' ).elem( 'intro' ).content()( ( { block, data, _fromMarkdown, confi
       block: 'heading',
       mods: { capitel: true, size: 'xxl' },
       mix: { block, elem: 'intro-heading' },
-      content: title[ 0 ].content,
+      content: title,
     },
     {
       block: 'paragraph',
       mix: { block, elem: 'intro-description' },
-      content: description[ 0 ].content,
+      content: description,
     },
     {
       elem: 'intro-action',

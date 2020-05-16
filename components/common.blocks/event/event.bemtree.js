@@ -2,7 +2,7 @@ block( 'event' )(
   extend()(
     (
       {
-        _fromMarkdown,
+        _blocksToHtml,
         _urlFor,
         config: {
           langs: [ i18n ],
@@ -20,7 +20,7 @@ block( 'event' )(
           title: ( event.title || {} )[ i18n ] || '',
           description: ( event.introText || {} )[ i18n ] || '',
           url: event.source || ( event.slug || {} ).current || '',
-          content: _fromMarkdown( ( event.content || {} )[ i18n ] || '' ),
+          content: _blocksToHtml( ( event.content || {} )[ i18n ] || [] ),
           source: event.source,
           sourceImage: _urlFor( event.sourceImage )
             .height( 35 )

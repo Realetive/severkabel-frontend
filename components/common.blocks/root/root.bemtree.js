@@ -2,6 +2,7 @@ const imageUrlBuilder = require( '@sanity/image-url' );
 const MarkdownBemjson = require( 'markdown-bemjson' );
 const _ = require( 'lodash' );
 const { decodeHTML } = require( 'entities' );
+const blocksToHtml = require( '@sanity/block-content-to-html' );
 
 const builder = imageUrlBuilder( {
   projectId: 'p9gjsb2n',
@@ -86,6 +87,7 @@ block( 'root' ).replace()( ( node, ctx ) => {
 
   node._urlFor = source => builder.image( source );
   node._fromMarkdown = markdown => markdownBemjson.convert( markdown );
+  node._blocksToHtml = blocks => ( { html: blocksToHtml( { blocks } ) } );
   node._ = _;
 
   return {

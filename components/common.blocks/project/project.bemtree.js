@@ -1,5 +1,5 @@
 block( 'project' )( {
-  extend: ( { _urlFor, _fromMarkdown, _, config: { langs: [ i18n ] } },
+  extend: ( { _urlFor, _blocksToHtml, _, config: { langs: [ i18n ] } },
     { project: {
       publishedAt,
       slug,
@@ -18,7 +18,7 @@ block( 'project' )( {
       url: _.get( slug, 'current' ),
       title: _.get( title, i18n ),
       subTitle: _.get( subTitle, i18n ),
-      content: _fromMarkdown( _.get( content, i18n ) ),
+      content: _blocksToHtml( _.get( content, i18n ) ),
       image: _urlFor( mainImage )
         .height( 530 )
         .maxHeight( 530 )

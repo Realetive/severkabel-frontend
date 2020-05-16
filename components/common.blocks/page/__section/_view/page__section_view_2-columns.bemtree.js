@@ -1,9 +1,7 @@
 block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', '2-columns' )( {
-    content: ( { block, _fromMarkdown }, { title, aside, description } ) => {
-      const desc = _fromMarkdown( description );
-
+    content: ( { block, _blocksToHtml }, { title, aside, description } ) => {
       return [
         {
           elem: 'layout',
@@ -23,7 +21,7 @@ block( 'page' )
                 },
                 description && {
                   elem: 'description',
-                  content: desc,
+                  content: _blocksToHtml( description ),
                 },
               ],
             },

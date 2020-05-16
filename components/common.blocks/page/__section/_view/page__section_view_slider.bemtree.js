@@ -1,10 +1,10 @@
 block( 'page' )
   .elem( 'section' )
   .elemMod( 'view', 'slider' )
-  .content()( ( { _urlFor, block, elemMods, data, config: { langs: [ i18n ] } } ) => {
+  .content()( ( { _urlFor, _blocksToHtml, block, elemMods, data, config: { langs: [ i18n ] } } ) => {
     const slides = ( ( data.api.page || {} ).gallery || [] ).map( slide => ( {
       heading: slide.title[ i18n ],
-      content: slide.description[ i18n ],
+      content: _blocksToHtml( slide.description[ i18n ] ).html,
       url: ( slide.link || {} )[ i18n ],
       image: _urlFor( slide )
         .width( 520 )
@@ -14,7 +14,7 @@ block( 'page' )
         .url(),
     } ) );
 
-    const slide = slides[ 0 ];
+    const [ slide ] = slides;
 
     return [
       {
@@ -46,8 +46,7 @@ block( 'page' )
                 content: slide.heading,
               },
               slide.content && {
-                block: 'paragraph',
-                mix: { block, elem: 'description' },
+                elem: 'description',
                 content: { html: slide.content },
               },
               slide.url && {
