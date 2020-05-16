@@ -1,8 +1,7 @@
 const UniversalRouter = require( 'universal-router' );
 const generateUrls = require( 'universal-router/generateUrls' );
 
-const { langs: [ lang ] } = require('./config');
-
+const { langs: [ lang ] } = require( './config' );
 const home = require( './routes/home' );
 const error = require( './routes/error' );
 const about = require( './routes/about' );
@@ -95,7 +94,7 @@ const router = new UniversalRouter(
       {
         path: lang === 'en' ? '/ru' : '/en',
         name: 'lang',
-        action: () => ( { redirect: `https://${ lang === 'en' ? '' : 'en.' }severkabel.ru` } )
+        action: () => ( { redirect: `https://${ lang === 'en' ? '' : 'en.' }severkabel.ru` } ),
       },
 
       {
