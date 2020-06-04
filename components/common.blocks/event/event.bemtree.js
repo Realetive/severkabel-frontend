@@ -18,7 +18,7 @@ block( 'event' )(
             .url(),
           date: event.publishedAt || new Date().toISOString(),
           title: ( event.title || {} )[ i18n ] || '',
-          description: ( event.introText || {} )[ i18n ] || '',
+          description: _blocksToHtml( ( event.introText || {} )[ i18n ] ) || '',
           url: event.source || ( event.slug || {} ).current || '',
           content: _blocksToHtml( ( event.content || {} )[ i18n ] || [] ),
           source: event.source,
