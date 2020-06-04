@@ -10,7 +10,7 @@ block( 'page' ).elem( 'section' ).elemMod( 'view', 'cooperation' )
             capitel: true,
             size: 'm',
           },
-          content: node.config.langs[ 0 ] === 'en' ? 'Partnership' : 'Сотрудничество',
+          content: node.config.langs[ 0 ] === 'en' ? 'Partners' : 'Сотрудничество',
         },
         {
           block: 'list',
