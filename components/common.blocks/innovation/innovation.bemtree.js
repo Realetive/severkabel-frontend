@@ -23,7 +23,7 @@ block( 'innovation' )( {
     'ctx.innovation': {
       url: _.get( slug, 'current' ),
       title: _.get( title, i18n ),
-      subTitle: _.get( subTitle, i18n ),
+      subTitle: _blocksToHtml( _.get( subTitle, i18n ) ),
       content: content && content[ i18n ] && _blocksToHtml( content[ i18n ] ),
       image:
         mainImage &&
