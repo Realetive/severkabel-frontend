@@ -43,7 +43,7 @@
     "bem-history": "^4.0.0",
     "date-fns": "^2.0.0-beta.4",
     "entities": "^2.0.0",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.4.16",
     "photoswipe": "^4.1.3",
     "postcss-csso": "^4.0.0"
   },
