@@ -79,14 +79,14 @@ app.post( '*', ( { ip, protocol, hostname, originalUrl, body }, res ) => {
           port: 465,
           secure: true,
           auth: {
-            user: 'mail@severkabel.ru',
-            pass: 'Nvt47Xcw',
+            user: 'mail@nordgrid.ru',
+            pass: 'ms6Vwice',
           },
         } );
 
         const mailOptions = {
-          from: '"SeverKabel" <mail@severkabel.ru>',
-          to: [ 'tatiana@severkabel.ru', 'severkabel@romanganin.ru' ],
+          from: '"NordGrid" <mail@nordgrid.ru>',
+          to: [ 'mail@nordgrid.ru' ],
           subject: `${ name } / ${ phone }`,
           replyTo: email,
           text: `${ name } / ${ phone } : ${ message }`,

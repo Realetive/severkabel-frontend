@@ -9,9 +9,9 @@ const policy = {
   },
   consent: {
     en:
-      ', I give my consent to the processing of my personal data freely, by my own will and in my interest. This Consent has been given to the Site Administration - Northern Cable LLC. Being the Site User.',
+      ', I give my consent to the processing of my personal data freely, by my own will and in my interest. This Consent has been given to the Site Administration - NordGrid LLC. Being the Site User.',
     ru:
-      ', даю согласие на обработку своих персональных данных свободно, своей волей и в своем интересе. Настоящее Согласие дано Администрации сайта — Обществу с ограниченной ответственностью «Северный кабель».',
+      ', даю согласие на обработку своих персональных данных свободно, своей волей и в своем интересе. Настоящее Согласие дано Администрации сайта — Обществу с ограниченной ответственностью «НордГрид».',
   },
   receive: {
     en:
@@ -103,7 +103,7 @@ block( 'page' ).mod( 'route', 'policy' )( {
             {
               block: 'link',
               to: 'index',
-              content: 'https://severkabel.ru/',
+              content: 'https://nordgrid.ru/',
             },
             policy.consent[ i18n ],
           ],
@@ -158,7 +158,7 @@ block( 'page' ).mod( 'route', 'policy' )( {
             {
               block: 'link',
               to: 'policy',
-              content: 'https://severkabel.ru/policy',
+              content: 'https://nordgrid.ru/policy',
             },
             '.',
           ],

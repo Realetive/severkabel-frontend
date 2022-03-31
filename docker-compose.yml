@@ -52,7 +52,7 @@ services:
       - TZ=Europe/Moscow
       - LETSENCRYPT=true
       - LE_EMAIL=tatiana@severkabel.ru
-      - LE_FQDN=severkabel.ru,en.severkabel.ru
+      - LE_FQDN=severkabel.ru,en.severkabel.ru,nordgrid.ru,en.nordgrid.ru
     networks:
       - app-network
 

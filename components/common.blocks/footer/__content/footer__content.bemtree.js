@@ -8,8 +8,8 @@ block( 'footer' ).elem( 'content' ).content()( node => [
     elem: 'contacts',
     content: {
       block: 'link',
-      url: 'mailto:mail@severkabel.ru',
-      content: 'mail@severkabel.ru',
+      url: 'mailto:mail@nordgrid.ru',
+      content: 'mail@nordgrid.ru',
     },
   },
 ] );

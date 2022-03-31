@@ -94,7 +94,7 @@ const router = new UniversalRouter(
       {
         path: lang === 'en' ? '/ru' : '/en',
         name: 'lang',
-        action: () => ( { redirect: `https://${ lang === 'en' ? '' : 'en.' }severkabel.ru` } ),
+        action: () => ( { redirect: `https://${ lang === 'en' ? '' : 'en.' }nordgrid.ru` } ),
       },
 
       {
